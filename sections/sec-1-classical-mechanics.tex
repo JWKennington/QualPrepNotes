@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      CLASSICAL MECHANICS SECTION      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Classical Mechanics}
+\chapter{Classical Mechanics}
 \label{sec:classmech}
 The classical mechanics subject matter in the qualifying exam is primarily at the level of \cite{thorntonClassicalDynamicsParticles2004}, a common, upper-level undergraduate mechanics text.
 
@@ -10,10 +10,10 @@ The classical mechanics subject matter in the qualifying exam is primarily at th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          NEWTONIAN MECHANICS          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Newtonian Mechanics}
+\section{Newtonian Mechanics}
 Newtonian mechanics is typically covered in the introductory-level mechanics courses, but the basics are worth revisiting for completeness.
 
-Objects do not change their motion unless acted on by external forces, and when acted upon, the acceleration is linearly proportional to the net applied force. The coefficient is \textbf{inertial mass}, not to be confused with other notions of "mass" as will be seen in Sec \ref{secSpecRel}
+Objects do not change their motion unless acted on by external forces, and when acted upon, the acceleration is linearly proportional to the net applied force. The coefficient is \textbf{inertial mass}, not to be confused with other notions of "mass" as will be seen in Sec \ref{sec:specrel}
 
 \eqn{\sum \vec{F} = \vec{F}_{net} = m\vec{a}}
 
@@ -22,9 +22,58 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 \eqn{q(t) = q_0 + \dot{q}t + \frac{1}{2}\ddot{q}t^2}
 
 
+\eqn{\vec{F} = -\del U}
+
+\eqn{W = \int\vec{F}\cdot d\vec{r} = \Delta U}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            ANGULAR MOTION             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Angular Motion}
+
+\eqn{v_{CM} = }
+
+\eqn{a_c = \frac{v^2}{r}}
+
+\eqn{\vec{\omega} = \vec{r}\times \vec{v}}
+
+\eqn{\vec{L} = I \vec{\omega}}
+
+\eqn{I = \sum_i m_i r_i^2 = \int r^2 dm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              OSCILLATION              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Oscillation}
+
+\eqn{m\ddot{x} + b\dot{x} + kx = 0}
+
+\eqn{x = c_1 e^{i\omega t} + c_2 e^{-i\omega t}}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          LAGRANGIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Lagrangian Mechanics}
+\section{Lagrangian Mechanics}
+
+\eqn{\Lag = T - U}
+
+\eqn{\pd{\Lag}{q_i} - \ddt \pd{\Lag}{\dot{q}_i} = 0 \where p_i \equiv \pd{\Lag}{\dot{q_i}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         HAMILTONIAN MECHANICS         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hamiltonian Mechanics}
+
+\eqn{\Ham = \sum_i q_i \dot{p}_i - \Lag \approx T + U}
+
+\eqn{}
+
+
+
+
+
 
 
