@@ -4,8 +4,46 @@
 \usepackage{amsfonts}
 
 
+% Define a new \eqn command that is a shorthand for wrapping in 
+% an "equation" environment, makes one-liners easier to read
 \newcommand{\eqn}[1]{
 	\begin{equation}
 		#1
 	\end{equation}
 }
+
+
+% Redefine the standard \vec "vector" command to be a boldfaced symbol
+\renewcommand{\vec}[1]{
+	\boldsymbol{\mathbf{#1}}
+}
+
+
+% Define new symbol "\Lag" for the Lagrangian
+\newcommand{\Lag}{\mathcal{L}}
+
+
+% Define new symbol '\Ham' for the Hamiltonian
+\newcommand{\Ham}{\mathcal{H}}
+
+
+% Define shorthand "\p" for partial derivative "\partial"
+\newcommand{\p}{\partial}
+
+
+% Define a shorthand '\del' for "\nambla"
+\newcommand{\del}{\nabla}
+
+
+% Define new shorthand "\where" for ", \quad\quad where\ \ "
+% Useful for one-line equations where a new symbol can be defined 
+% at the end of the line instead of requiring a new line
+\newcommand{\where}{,\quad\quad \mathrm{where}\ \ }
+
+
+% Define a new command for taking time-derivatives of an optional expression.
+\newcommand{\ddt}[1][]{\frac{d #1}{dt}}
+
+
+% Define a new command for taking partial derivatives
+\newcommand{\pd}[2]{\frac{\p #1}{\p #2}}
