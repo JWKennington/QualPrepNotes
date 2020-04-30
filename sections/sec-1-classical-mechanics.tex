@@ -11,6 +11,7 @@ The classical mechanics subject matter in the qualifying exam is primarily at th
 %          NEWTONIAN MECHANICS          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Newtonian Mechanics}
+\label{sec:cm-newtonian}
 Newtonian mechanics is typically covered in the introductory-level mechanics courses, but the basics are worth revisiting for completeness.
 
 Objects do not change their motion unless acted on by external forces, and when acted upon, the acceleration is linearly proportional to the net applied force. The coefficient is \textbf{inertial mass}, not to be confused with other notions of "mass" as will be seen in Sec \ref{sec:specrel}
@@ -19,33 +20,51 @@ Objects do not change their motion unless acted on by external forces, and when 
 
 The solution for Newtonian equations of motion under constant acceleration, for a general coordinate $q$ is given by: 
 
-\eqn{q(t) = q_0 + \dot{q}t + \frac{1}{2}\ddot{q}t^2}
+\eqn[eq:cm-newt-coord]{q(t) = q_0 + \dot{q}t + \frac{1}{2}\ddot{q}t^2}
 
-
+In the case of a scalar potential $U$, the force vector $\vec{F}$ is derived as the negative gradient of the potential:
 \eqn{\vec{F} = -\del U}
 
-\eqn{W = \int\vec{F}\cdot d\vec{r} = \Delta U}
+Also worth mentioning, the work-energy theorem relates the force vector $\vec{F}$ along a curve $C$ to the change in potential energy. Be careful to get the signs correct in $\vec{F}$ and $\vec{s}$ before the dot product to get the right signs in the result.
+\eqn{W = \int_C\vec{F}(\vec{s})\cdot d\vec{s} = \Delta U}
+
+In the absence of external forces, the linear momentum $\vec{p} = m\vec{v}$ is conserved, as is the total energy of the system $E = T + U$, where $T = \frac{1}{2}mv^2$ is the Newtonian kinetic energy and $U$ is the potential energy.
+\eqn{\ddt[\vec{p}] = \ddt[E] = 0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %            ANGULAR MOTION             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Angular Motion}
+\label{sec:cm-angular}
+Another topic that should be thoroughly engrained in all introductory undergraduate mechanics courses, angular motion will undoubtedly appear on the qualifying exam. We briefly review some key concepts from rotational motion here.
 
-\eqn{v_{CM} = }
+Most of the equations are similar from Sec \ref{sec:cm-newtonian}, with the substitution from translational position coordinates to rotational ones $x \rightarrow \theta$, $v\rightarrow \omega$, etc. Note that Eq \ref{eq:cm-newt-coord} still holds for $q=\theta$. Nearly all the Cartesian-coordinate equations of Newtonian mechanics have a spherical-coordinate analog. For instance $v = \dot{x}$ becomes $\omega = \dot{\theta}$.
+
+
+The tangential velocity can be related to the angular velocity and radial vector, as can the angular momentum to the linear momentum. Newton's laws about net force and acceleration also have a direct, angular analogue, as does translational kinetic energy:
+\eqn{\vec{v}_{\perp} = \vec{\omega}\times \vec{r}}
+
+\eqn{\vec{L} = I \vec{\omega} = \vec{r}\times\vec{p}\where I = \sum_i m_i r_i^2 = \int r^2 dm}
+
+\eqn{\sum\vec{\tau}=\vec{\tau}_{net}=I\ddot{\theta}=\ddt[\vec{L}] \where \vec{\tau} = \vec{r}\times\vec{F}}
+
+\eqn{T_{rot} = \frac{1}{2}I\omega^2}
+
+There are also a handful of useful statements about uniform circular motion. The non-slip condition for rolling is when the center of mass and tangential velocities are equal (in magnitude). The acceleration, called centripetal due to its purely-radial nature, can be described in terms of the velocity and radius:
+\eqn{v_{CM} = v_{\perp}}
+
 
 \eqn{a_c = \frac{v^2}{r}}
 
-\eqn{\vec{\omega} = \vec{r}\times \vec{v}}
 
-\eqn{\vec{L} = I \vec{\omega}}
-
-\eqn{I = \sum_i m_i r_i^2 = \int r^2 dm}
+Similar to the Cartesian Newtonian case, in the absence of external torque ($\vec{\tau}_{net}=0$), then the angular momentum is preserved.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              OSCILLATION              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Oscillation}
+\label{sec:cm-oscillation}
 
 \eqn{m\ddot{x} + b\dot{x} + kx = 0}
 
@@ -56,8 +75,11 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %          LAGRANGIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lagrangian Mechanics}
+\label{sec:cm-lagrangian}
 
-\eqn{\Lag = T - U}
+Lagrangian Mechanics marks the separation between introductory and upper-level, undergraduate mechanics material. Though most courses introduce the Lagrangian as in Eq \ref{eq:lag-def}, there is a more rigorous, rich mathematical underpinning included in Appendix \ref{app:calcvar}.
+
+\eqn[eq:lag-def]{\Lag = T - U}
 
 \eqn{\pd{\Lag}{q_i} - \ddt \pd{\Lag}{\dot{q}_i} = 0 \where p_i \equiv \pd{\Lag}{\dot{q_i}}}
 
@@ -66,6 +88,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %         HAMILTONIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hamiltonian Mechanics}
+\label{sec:cm-hamiltonian}
 
 \eqn{\Ham = \sum_i q_i \dot{p}_i - \Lag \approx T + U}
 
@@ -76,6 +99,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %         CENTRAL FORCE MOTION          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Central Force Motion}
+\label{sec:cm-cfm}
 
 \eqn{x}
 
@@ -84,6 +108,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %          SYSTEMS OF PARTICLES         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems of Particles}
+\label{sec:cm-particles}
 
 % decomposition of momenta around center of mass
 % same for kinetic energy
@@ -96,6 +121,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %     NON INERTIAL REFERENCE FRAMES     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Noninertial Reference Frames}
+\label{sec:cm-noninertial}
 
 % Rotating coordinate systems
 \eqn{x}
@@ -105,6 +131,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %             RIGID BODIES              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rigid Bodies}
+\label{sec:cm-rigid}
 
 % Inertia Tensor
 % Principal Inertia axes
@@ -117,8 +144,9 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %         COUPLED OSCILLATIONS          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Coupled Oscillations}
+\label{sec:cm-coupled}
 
-
+ 
 \eqn{x}
 
 
@@ -126,6 +154,7 @@ The solution for Newtonian equations of motion under constant acceleration, for 
 %          CONTINUOUS SYSTEMS           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Continuous Systems}
+\label{sec:cm-continuous}
 
 % Wave Equation
 % Group velocity and dispersion relations
