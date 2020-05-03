@@ -51,6 +51,17 @@ The tangential velocity can be related to the angular velocity and radial vector
 
 \eqn{T_{rot} = \frac{1}{2}I\omega^2}
 
+The moment of inertia is a nuanced mathematical object, given proper treatment in Sec \ref{sec:cm-rigid}. In the simpler cases it is helpful knowing some common moments of inertia:
+
+\eqn{I_{\mathrm{sphere}} = \frac{2}{5}MR^2,\quad I_{\mathrm{shell}} = \frac{2}{3}MR^2}
+\eqn{I_{\mathrm{disk}} = \frac{1}{2}MR^2,\quad I_{\mathrm{hoop}} = MR^2}
+\eqn{\label{eq:cm-I-rod} I_{\mathrm{rod,end}} = \frac{1}{12}ML^2}
+
+The parallel axis theorem states that if an object has moment of inertia $I_{\hat{a}}$ about an axis $\hat{a}$, and a moment of inertia $I_{\hat{b}}$ about an axis $\hat{b}$, then: 
+\eqn{I_{\hat{b}} = I_{\hat{a}} + Md^2\where \hat{b} \parallel \hat{a} \mathrm{\ and\ is\ separated\ by\ distance\ } d}
+
+Note that the above can be used to derive $I_{\mathrm{rod,center}} = \frac{1}{3}ML^2$ from Eq \ref{eq:cm-I-rod} with $d = \frac{1}{2}L$.\\
+
 There are also a handful of useful statements about uniform circular motion. The non-slip condition for rolling is when the center of mass and tangential velocities are equal (in magnitude). The acceleration, called centripetal due to its purely-radial nature, can be described in terms of the velocity and radius:
 \eqn{v_{CM} = v_{\perp}}
 
@@ -64,6 +75,7 @@ Similar to the Cartesian Newtonian case, in the absence of external torque ($\ve
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              OSCILLATION              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Oscillation}
 \label{sec:cm-oscillation}
 
@@ -72,17 +84,20 @@ Similar to the Cartesian Newtonian case, in the absence of external torque ($\ve
 % Driven Oscillation
 % Response functions
 
-Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) instead of the wave equation because it's easier to work in one-dimension. 
+Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) instead of the general wave equation because it's easier to work in one-dimension. That approach leads to the second-order homogeneous equation Eq \ref{eq:cm-sho-de}, with the familiar solutions given by Eq \ref{eq:cm-sho-soln} (complex roots of characteristic equation + Euler's Identity $e^{i\theta} = \cos{\theta} + i\sin{\theta})$. Plugging into $T = \frac{1}{2}m\dot{x}^2$ and $U = \frac{1}{2}kx^2$ gives Eq \ref{eq:cm-sho-energy}.
 
 \eqn{\label{eq:cm-hooke} F(x) = -kx,\quad U = \frac{1}{2}kx^2}
-\eqn{m\ddot{x} + b\dot{x} + kx = 0}
+\eqn{\label{eq:cm-sho-de} \ddot{x} +  + \omega_0^2x = 0\where \omega_0 = \sqrt\frac{k}{m} = 2\pi \nu_0}
 
-\eqn{x = c_1 e^{i\omega t} + c_2 e^{-i\omega t}}
+\eqn{\label{eq:cm-sho-soln} x(t) = A\sin{\left(\omega_0 t - \delta\right)}}
+
+\eqn{\label{eq:cm-sho-energy} E = T + U = \frac{1}{2}kA^2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          LAGRANGIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Lagrangian Mechanics}
 \label{sec:cm-lagrangian}
 
