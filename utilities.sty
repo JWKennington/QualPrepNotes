@@ -12,11 +12,8 @@
 % Define a new \eqn command that is a shorthand for wrapping in 
 % an "equation" environment, makes one-liners easier to read
 \newcommand{\eqn}[2][\nolabel]{
-	\begin{equation}
-	\ifthenelse{\equal{#1}{\nolabel}}{}{\label{#1}} % assign label if one is given
-		#2
-	\end{equation}
-}
+	\begin{equation}\ifthenelse{\equal{#1}{\nolabel}}{}{\label{#1}} % assign label if one is given
+		#2 \end{equation}}
 
 
 % Redefine the standard \vec "vector" command to be a boldfaced symbol
