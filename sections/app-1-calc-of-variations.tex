@@ -4,5 +4,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Calculus of Variations}
 \label{app:calcvar}
-Calculus of variations
+Calculus of variations functional $J$\footnote{A functional is is a generalization of a function that depends on infinitely many parameters. In this case, $J$ depends on the value of $y$ at \textit{every} point between $x_1$ and $x_2$, so we could also write $J\big(\{y_i\}\big)$ where $\{y_i\}=\{y(x_i):x_i\in[x_1, x_2]\}$. Note that this set $\{y_i\}$ contains an uncountably infinite number of elements, hence the "functional" $J$ has infinite degrees of freedom.}
 
+
+\eqn{J = \int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx}
+
+\begin{equation}
+	\begin{split}
+		y(x) & \rightarrow y(\alpha, x) = y(x) + \alpha\eta(x) \\
+		J & \rightarrow J(\alpha) = \int_{x_1}^{x_2}f\big\{y(\alpha, x), y'(\alpha, x); x\big\}dx \\
+	\end{split}
+\end{equation}
+
+\eqn{\pd{J}{\alpha}\bigg\rvert_{\alpha=0}=0}
+
+% Euler's Equation Derivation
+Euler's equation can be derived from the above
+
+\eqn{\pd{J}{\alpha} = \pd{}{\alpha}\int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx = \int_{x_1}^{x_2}\left(\pd{f}{y}\pd{y}{\alpha} + \pd{f}{y'}\pd{y'}{\alpha}\right)dx}
+
+\eqn{\pd{J}{\alpha} = \int_{x_1}^{x_2}\left(\pd{f}{y}\eta(x) + \pd{f}{y'}\frac{d\eta}{dx}\right)dx\where \pd{y}{\alpha} = \eta(x),\quad \pd{y'}{\alpha}=\frac{d\eta}{dx}}
+
+\eqn{}
+
+
+% Constraints
+
+% delta notation

@@ -80,24 +80,49 @@ Similar to the Cartesian Newtonian case, in the absence of external torque ($\ve
 \label{sec:cm-oscillation}
 
 % Harmonic Motion
-% Damped Oscillation
-% Driven Oscillation
-% Response functions
-
 Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) instead of the general wave equation because it's easier to work in one-dimension. That approach leads to the second-order homogeneous equation Eq \ref{eq:cm-sho-de}, with the familiar solutions given by Eq \ref{eq:cm-sho-soln} (complex roots of characteristic equation + Euler's Identity $e^{i\theta} = \cos{\theta} + i\sin{\theta})$. Plugging into $T = \frac{1}{2}m\dot{x}^2$ and $U = \frac{1}{2}kx^2$ gives Eq \ref{eq:cm-sho-energy}.
 
 \eqn{\label{eq:cm-hooke} F(x) = -kx,\quad U = \frac{1}{2}kx^2}
-\eqn{\label{eq:cm-sho-de} \ddot{x} +  + \omega_0^2x = 0\where \omega_0 = \sqrt\frac{k}{m} = 2\pi \nu_0}
+\eqn{\label{eq:cm-sho-de} \ddot{x} +  \omega_0^2x = 0\where \omega_0 = \sqrt\frac{k}{m} = 2\pi \nu_0}
 
 \eqn{\label{eq:cm-sho-soln} x(t) = A\sin{\left(\omega_0 t - \delta\right)}}
 
 \eqn{\label{eq:cm-sho-energy} E = T + U = \frac{1}{2}kA^2}
 
 
+% Damped Oscillation
+When a damping force is added like Eq \ref{eq:cm-damp-force}, the equation of motion has an extra term
+\eqn{\label{eq:cm-damp-force} F_{\mathrm{damp}} = -b\dot{x}}
+\eqn{\label{eq:cm-sho-de} \ddot{x} + 2\beta \dot{x} + \omega_0^2x = 0\where \beta = \frac{b}{2m}}
+\eqn{\label{eq:cm-dho-soln}
+	x(t) = e^{-\beta t}\left[A_1 e^{i\omega t} + A_2e^{-i\omega t}\right]\where \omega^2=\omega_0^2-\beta^2}
+
+Note in the above solution Eq \ref{eq:cm-dho-soln}, the relative values of $\omega_0$ and $\beta$ can produce phenomenologically distinct behavior. Specifically, the cases are:
+\begin{equation}
+	\begin{split}
+		(i)\quad \omega^2 & > 0 \iff \omega_0^2 > \beta^2\quad \mathrm{"Underdamped"} \\
+		(ii)\quad \omega^2 & < 0 \iff \omega_0^2 < \beta^2\quad \mathrm{"Overdamped"} \\
+		(iii)\quad \omega^2 & = 0 \iff \omega_0^2 = \beta^2\quad \mathrm{"Critically\ Damped"} \\
+	\end{split}	
+\end{equation}
+Recall the general behavior for the above solution categories: $(i)$ underdamped solutions show an exponentially-decaying oscillation, and will periodically cross the x axis, $(ii)$ overdamped solutions are slowly decaying exponentials without oscillation, and $(iii)$ critically-damped is the unique, most-rapidly decaying exponential without oscillation.\\
+
+
+% Driven Oscillation
+In the case of a driving force (sinusoidal for simplicity), the equation of motion becomes inhomogeneous, and we must solve for the particular solution $x_p(t)$ or "steady-state" effects (as opposed to the complementary solution $x_c(t)$ or "transient" effects of the homogeneous equation given by Eq \ref{eq:cm-dho-soln}). The steady state effects are dominant for $t >> 1/\beta$.
+
+\eqn{\ddot{x} + 2\beta \dot{x} + \omega_0^2x = A\cos{\omega t}\where A = \frac{F_0}{m}}
+\eqn{x_p(t) = D\cos{\left(\omega t - \delta\right)}\where D=\frac{A}{\sqrt{\left(\omega_0^2 - \omega^2\right)^2 + 4\omega^2\beta^2}},\quad \delta=\tan^{-1}{\left(\frac{2\omega\beta}{\omega_0^2 - \omega^2}\right)}}
+
+Resonance effects can be computed by finding the angular frequency $\omega_R$ at which the amplitude $D$ is maximized:
+\eqn{\omega_R = \sqrt{\omega_0^2 - 2\beta^2}\where \frac{dD}{d\omega}\bigg{\rvert}_{\omega=\omega_R}=0}
+Note that for weak damping, or where $\beta \rightarrow 0$, then the resonant frequency approaches the natural frequency of the system $\omega_R \rightarrow \omega_0$.
+\\
+% Response functions (omitted since optional, may revisit)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          LAGRANGIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 \section{Lagrangian Mechanics}
 \label{sec:cm-lagrangian}
 
