@@ -4,33 +4,60 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Calculus of Variations}
 \label{app:calcvar}
-Calculus of variations functional $J$\footnote{A functional is is a generalization of a function that depends on infinitely many parameters. In this case, $J$ depends on the value of $y$ at \textit{every} point between $x_1$ and $x_2$, so we could also write $J\big(\{y_i\}\big)$ where $\{y_i\}=\{y(x_i):x_i\in[x_1, x_2]\}$. Note that this set $\{y_i\}$ contains an uncountably infinite number of elements, hence the "functional" $J$ has infinite degrees of freedom.}
+Here we briefly review some key aspects of the calculus of variations, with an emphasis on Euler's equations and common notations used in physics texts. The basic problem is to determine the function $y$ such that the integral $J$ given by Eq \ref{eq:app-cov:j} (properly called a functional\footnote{A functional is is a generalization of a function that depends on infinitely many parameters. In this case, $J$ depends on the value of $y$ at \textit{every} point between $x_1$ and $x_2$, so we could also write $J\big(\{y_i\}\big)$ where $\{y_i\}=\{y(x_i):x_i\in[x_1, x_2]\}$. Note that this set $\{y_i\}$ contains an uncountably infinite number of elements, hence the "functional" $J$ has infinite degrees of freedom.}) is an extremum (maximum or minimum). Physics is often concerned with the minimum case, in accordance with Hamilton's Principle and Fermat's Principle, so we'll use "minimum" going forward. 
 
 
-\eqn{J = \int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx}
+\eqn[eq:app-cov:j]{J = \int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx}
+
+For $J$ to be a minimum given $Y(x)$, that means that \textit{any neighboring function}, no matter how close, must make $J$ increase. We construct the notion of "neighboring" function by adding a  second function $\eta(x)$ to $y(x)$, scaled by $\alpha$, as in Eq. \ref{eq:app-cov:add-alpha}. Once the new parameter $\alpha$, which controls the "deviation" along $\eta(x)$ from the original function $y(x)$, has been propagated to $J(\alpha)$, we can formally state a necessary condition for an minimum in \ref{eq:app-cov:ex-cond}. 
 
 \begin{equation}
+	\label{eq:app-cov:add-alpha}
 	\begin{split}
 		y(x) & \rightarrow y(\alpha, x) = y(x) + \alpha\eta(x) \\
 		J & \rightarrow J(\alpha) = \int_{x_1}^{x_2}f\big\{y(\alpha, x), y'(\alpha, x); x\big\}dx \\
 	\end{split}
 \end{equation}
 
-\eqn{\pd{J}{\alpha}\bigg\rvert_{\alpha=0}=0}
+\eqn[eq:app-cov:ex-cond]{\pd{J}{\alpha}\bigg\rvert_{\alpha=0}=0}\
+
+Note that this condition isn't sufficient, we'd also need to show the second-order partial derivative to be positive; fortunately in most physics applications this isn't required. %The familiar Lagrangian equation from Sec. \ref{sec:cm-lagrangian} is the special case of $f=\Lag$, though the variable $x$ from Eq. \ref{eq:app-cov:j} shouldn't be taken to mean the "x-coordinate," rather, it represents the familiar, generalized coordinates $q$ we're used to seeing in the Lagrangian. 
+
+Also worth noting, we often use a shorthand by representing the variation with a $\delta$ symbol in place of the partial derivatives of the parameter $\alpha$. This gives a shorthand notation for the extremum condition, as in Eq. \ref{eq:app-cov:short}:
+\eqn{\delta J \equiv \pd{J}{\alpha}d\alpha,\quad \delta y \equiv \pd{y}{\alpha}d\alpha,\quad ...}
+\eqn[eq:app-cov:short]{\delta J = \delta\int_{x_1}^{x_2}f\left\{y, y'; x\right\}dx = 0}
 
 % Euler's Equation Derivation
-Euler's equation can be derived from the above
+\newpage
+Euler's equation, the more general form of the familiar Euler-Lagrange equation, can be derived from the above extremum condition for $J$. The below derivation of the Euler equation begins by computing the partial derivatives of $f$ of the new parameter $\alpha$, and then substitutes known quantities from Eq. \ref{eq:app-cov:add-alpha}:
 
 \eqn{\pd{J}{\alpha} = \pd{}{\alpha}\int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx = \int_{x_1}^{x_2}\left(\pd{f}{y}\pd{y}{\alpha} + \pd{f}{y'}\pd{y'}{\alpha}\right)dx}
 
-\eqn{\pd{J}{\alpha} = \int_{x_1}^{x_2}\left(\pd{f}{y}\eta(x) + \pd{f}{y'}\frac{d\eta}{dx}\right)dx\where \pd{y}{\alpha} = \eta(x),\quad \pd{y'}{\alpha}=\frac{d\eta}{dx}}
+\eqn{\pd{J}{\alpha} = \int_{x_1}^{x_2}\left(\pd{f}{y}\eta(x) + \pd{f}{y'}\frac{d\eta}{dx}\right)dx\where \pd{y}{\alpha} = \eta(x),\quad \pd{y'}{\alpha}=\frac{d\eta}{dx}}\
+
+The latter term in the above can be integrated by parts:
 
 \eqn{\int_{x_1}^{x_2}\pd{f}{y'}\frac{d\eta}{dx}dx = \pd{f}{y'}\eta(x)\bigg\rvert_{x_1}^{x_2} - \int_{x_1}^{x_2}\frac{d}{dx}\left(\pd{f}{y'}\right)\eta(x)dx\where \pd{f}{y'}\eta(x)\bigg\rvert_{x_1}^{x_2} = 0}
 
+Factoring out a common term of $\eta(x)$ gives the succinct:
+
 \eqn{\pd{J}{\alpha} = \int_{x_1}^{x_2} \left(\pd{f}{y} - \frac{d}{dx}\pd{f}{y'}\right)\eta(x)dx}
 
-\eqn{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} = 0}
+In order for the above to be equal to zero, the first term must vanish since $\eta(x)$ can be an arbitrary, non-zero function. This last implication gives the Euler equation:
+
+\eqn{\boxed{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} = 0}\quad\quad\quad \text{Euler's Equation}}\
+
 
 % Constraints
+It is also possible to add constraints to the Euler equation; we discuss two types of constraints. The simpler type, \textit{function} constraint takes the form of a second function $g$. In such a case, the Euler equation is modified by the inclusion of an \textit{undetermined Lagrangian multiplier} $\lambda$ scaled by partial derivatives of $g$. The general case of $n$ variables and $m$ constraints is given by Eq. \ref{eq:app-cov:euler-f-const} where $i = 1, 2, ..., n$ and $j = 1, 2, ..., m$.
+
+\eqn{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} + \lambda(x)\pd{g}{y}= 0\where g\{y, y'; x\} = 0}
+
+\eqn[eq:app-cov:euler-f-const]{\boxed{\pd{f}{y_i} - \frac{d}{dx}\pd{f}{y'_i} + \sum\limits_{j}\lambda_j(x)\pd{g_j}{y_i} = 0}\quad \text{Euler's Equation with function constraint}}\
+
+A constraint may also be added in the form of an integral equation (or additional functional) $K$. In this case, $y$ must be the extremum of $\int(f + \lambda g)dx$, which gives a new form of Euler's equation as expressed in Eq \ref{eq:app-cov:euler-i-const}:
+\eqn{K[y] = \int_{x_1}^{x_2}g\left\{y(x), y'(x); x\right\}dx} 
+
+\eqn[eq:app-cov:euler-i-const]{\boxed{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} + \lambda \left(\pd{g}{y} - \frac{d}{dx}\pd{g}{y'}\right) = 0}\quad \text{Euler's Equation with integral constraint}}\
 
 % delta notation
