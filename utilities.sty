@@ -50,3 +50,15 @@
 
 % Define a new command for taking partial derivatives
 \newcommand{\pd}[2]{\frac{\p #1}{\p #2}}
+
+
+
+% Define a new command for "quote box"
+\newcommand{\quotebox}[2][0.8]{
+	\begin{center}
+ 		\framebox{
+ 			\parbox{\dimexpr #1\linewidth-2\fboxsep-2\fboxrule}
+ 			{\itshape #2}
+  		}
+  	\end{center}
+}
