@@ -3,6 +3,10 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{ifthen}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
 
 
 % Create a token value for "no label given"
@@ -65,3 +69,22 @@
 
 % Define new command for "naming" an equation below the assigned number
 \newcommand{\eqname}[1]{\tag*{#1}}
+
+
+
+% Define new command for including pdf/pdf_tex inkscape figures
+\newcommand{\incfig}[2][1.0]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+
+% Define a shorthand for including a figure
+\newcommand{\texfig}[3][1.0]{
+	\begin{figure}[ht]
+	    \centering
+    	\incfig[#1]{#2}
+	    \caption{#3}
+    	\label{fig:#1}
+	\end{figure}
+}
