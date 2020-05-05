@@ -12,7 +12,7 @@ The classical mechanics subject matter in the qualifying exam is primarily at th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Newtonian Mechanics}
 \label{sec:cm-newtonian}
-Newtonian mechanics is typically covered in the introductory-level mechanics courses, but the basics are worth revisiting for completeness.
+Newtonian mechanics is typically covered in the introductory-level mechanics courses, but the basics are worth revisiting for completeness. \index{Newton}
 
 Objects do not change their motion unless acted on by external forces, and when acted upon, the acceleration is linearly proportional to the net applied force. The coefficient is \textbf{inertial mass}, not to be confused with other notions of "mass" as will be seen in Sec \ref{sec:specrel}
 
@@ -26,9 +26,9 @@ In the case of a scalar potential $U$, the force vector $\vec{F}$ is derived as 
 \eqn{\vec{F} = -\del U}
 
 Also worth mentioning, the work-energy theorem relates the force vector $\vec{F}$ along a curve $C$ to the change in potential energy. Be careful to get the signs correct in $\vec{F}$ and $\vec{s}$ before the dot product to get the right signs in the result.
-\eqn{W = \int_C\vec{F}(\vec{s})\cdot d\vec{s} = \Delta U}
+\eqn{W = \int_C\vec{F}(\vec{s})\cdot d\vec{s} = \Delta U} \index{Work-Energy Theorem}
 
-In the absence of external forces, the linear momentum $\vec{p} = m\vec{v}$ is conserved, as is the total energy of the system $E = T + U$, where $T = \frac{1}{2}mv^2$ is the Newtonian kinetic energy and $U$ is the potential energy.
+In the absence of external forces, the linear momentum $\vec{p} = m\vec{v}$ is conserved, as is the total energy of the system $E = T + U$, where $T = \frac{1}{2}mv^2$ is the Newtonian kinetic energy and $U$ is the potential energy. \index{Conservation of momentum}
 \eqn{\ddt[\vec{p}] = \ddt[E] = 0}
 
 
@@ -37,6 +37,7 @@ In the absence of external forces, the linear momentum $\vec{p} = m\vec{v}$ is c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Angular Motion}
 \label{sec:cm-angular}
+\index{Rotation}
 Another topic that should be thoroughly engrained in all introductory undergraduate mechanics courses, angular motion will undoubtedly appear on the qualifying exam. We briefly review some key concepts from rotational motion here.
 
 Most of the equations are similar from Sec \ref{sec:cm-newtonian}, with the substitution from translational position coordinates to rotational ones $x \rightarrow \theta$, $v\rightarrow \omega$, etc. Note that Eq \ref{eq:cm-newt-coord} still holds for $q=\theta$. Nearly all the Cartesian-coordinate equations of Newtonian mechanics have a spherical-coordinate analog. For instance $v = \dot{x}$ becomes $\omega = \dot{\theta}$.
@@ -51,6 +52,7 @@ The tangential velocity can be related to the angular velocity and radial vector
 
 \eqn{T_{rot} = \frac{1}{2}I\omega^2}
 
+\index{Angular Momentum}
 The moment of inertia is a nuanced mathematical object, given proper treatment in Sec \ref{sec:cm-rigid}. In the simpler cases it is helpful knowing some common moments of inertia:
 
 \eqn{I_{\mathrm{sphere}} = \frac{2}{5}MR^2,\quad I_{\mathrm{shell}} = \frac{2}{3}MR^2}
@@ -59,10 +61,11 @@ The moment of inertia is a nuanced mathematical object, given proper treatment i
 
 The parallel axis theorem states that if an object has moment of inertia $I_{\hat{a}}$ about an axis $\hat{a}$, and a moment of inertia $I_{\hat{b}}$ about an axis $\hat{b}$, then: 
 \eqn{I_{\hat{b}} = I_{\hat{a}} + Md^2\where \hat{b} \parallel \hat{a} \mathrm{\ and\ is\ separated\ by\ distance\ } d}
+\index{Parallel-Axis Theorem}
 
 Note that the above can be used to derive $I_{\mathrm{rod,center}} = \frac{1}{3}ML^2$ from Eq \ref{eq:cm-I-rod} with $d = \frac{1}{2}L$.\\
 
-There are also a handful of useful statements about uniform circular motion. The non-slip condition for rolling is when the center of mass and tangential velocities are equal (in magnitude). The acceleration, called centripetal due to its purely-radial nature, can be described in terms of the velocity and radius:
+There are also a handful of useful statements about uniform circular motion. The non-slip condition for rolling is when the center of mass and tangential velocities are equal (in magnitude). The acceleration, called centripetal due to its purely-radial nature, can be described in terms of the velocity and radius:\index{Uniform Circular Motion}
 \eqn{v_{CM} = v_{\perp}}
 
 
@@ -78,11 +81,11 @@ Similar to the Cartesian Newtonian case, in the absence of external torque ($\ve
 \newpage
 \section{Oscillation}
 \label{sec:cm-oscillation}
-
+\index{Oscillation}
 % Harmonic Motion
 Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) instead of the general wave equation because it's easier to work in one-dimension. That approach leads to the second-order homogeneous equation Eq \ref{eq:cm-sho-de}, with the familiar solutions given by Eq \ref{eq:cm-sho-soln} (complex roots of characteristic equation + Euler's Identity $e^{i\theta} = \cos{\theta} + i\sin{\theta})$. Plugging into $T = \frac{1}{2}m\dot{x}^2$ and $U = \frac{1}{2}kx^2$ gives Eq \ref{eq:cm-sho-energy}.
 
-\eqn{\label{eq:cm-hooke} F(x) = -kx,\quad U = \frac{1}{2}kx^2}
+\eqn{\label{eq:cm-hooke} F(x) = -kx,\quad U = \frac{1}{2}kx^2}\index{Hooke's Law}
 \eqn{\label{eq:cm-sho-de} \ddot{x} +  \omega_0^2x = 0\where \omega_0 = \sqrt\frac{k}{m} = 2\pi \nu_0}
 
 \eqn{\label{eq:cm-sho-soln} x(t) = A\sin{\left(\omega_0 t - \delta\right)}}
@@ -91,32 +94,32 @@ Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) ins
 
 
 % Damped Oscillation
-When a damping force is added like Eq \ref{eq:cm-damp-force}, the equation of motion has an extra term
+When a damping force is added like Eq \ref{eq:cm-damp-force}, the equation of motion has an extra term \index{Oscillation!Damped}
 \eqn{\label{eq:cm-damp-force} F_{\mathrm{damp}} = -b\dot{x}}
 \eqn{\label{eq:cm-sho-de} \ddot{x} + 2\beta \dot{x} + \omega_0^2x = 0\where \beta = \frac{b}{2m}}
 \eqn{\label{eq:cm-dho-soln}
 	x(t) = e^{-\beta t}\left[A_1 e^{i\omega t} + A_2e^{-i\omega t}\right]\where \omega^2=\omega_0^2-\beta^2}
 
 Note in the above solution Eq \ref{eq:cm-dho-soln}, the relative values of $\omega_0$ and $\beta$ can produce phenomenologically distinct behavior. Specifically, the cases are:
-\begin{equation}
-	\begin{split}
-		(i)\quad \omega^2 & > 0 \iff \omega_0^2 > \beta^2\quad \mathrm{"Underdamped"} \\
-		(ii)\quad \omega^2 & < 0 \iff \omega_0^2 < \beta^2\quad \mathrm{"Overdamped"} \\
-		(iii)\quad \omega^2 & = 0 \iff \omega_0^2 = \beta^2\quad \mathrm{"Critically\ Damped"} \\
-	\end{split}	
-\end{equation}
+\begin{subequations}
+\begin{align}
+		\omega^2 &> 0 & \omega_0^2 &> \beta^2 & \text{Underdamped} \\
+		\omega^2 &< 0 & \omega_0^2 &< \beta^2 & \text{Overdamped} \\
+		\omega^2 &= 0 & \omega_0^2 &= \beta^2 & \text{Critically Damped} 
+\end{align}	
+\end{subequations}
 Recall the general behavior for the above solution categories: $(i)$ underdamped solutions show an exponentially-decaying oscillation, and will periodically cross the x axis, $(ii)$ overdamped solutions are slowly decaying exponentials without oscillation, and $(iii)$ critically-damped is the unique, most-rapidly decaying exponential without oscillation.\\
 
 
 % Driven Oscillation
-In the case of a driving force (sinusoidal for simplicity), the equation of motion becomes inhomogeneous, and we must solve for the particular solution $x_p(t)$ or "steady-state" effects (as opposed to the complementary solution $x_c(t)$ or "transient" effects of the homogeneous equation given by Eq \ref{eq:cm-dho-soln}). The steady state effects are dominant for $t >> 1/\beta$.
+In the case of a driving force (sinusoidal for simplicity), the equation of motion becomes inhomogeneous, and we must solve for the particular solution $x_p(t)$ or "steady-state" effects (as opposed to the complementary solution $x_c(t)$ or "transient" effects of the homogeneous equation given by Eq \ref{eq:cm-dho-soln}). The steady state effects are dominant for $t >> 1/\beta$. \index{Oscillation!Driven}\index{Waves!Transient}\index{Waves!Stead-state}
 
 \eqn{\ddot{x} + 2\beta \dot{x} + \omega_0^2x = A\cos{\omega t}\where A = \frac{F_0}{m}}
 \eqn{x_p(t) = D\cos{\left(\omega t - \delta\right)}\where D=\frac{A}{\sqrt{\left(\omega_0^2 - \omega^2\right)^2 + 4\omega^2\beta^2}},\quad \delta=\tan^{-1}{\left(\frac{2\omega\beta}{\omega_0^2 - \omega^2}\right)}}
 
 Resonance effects can be computed by finding the angular frequency $\omega_R$ at which the amplitude $D$ is maximized:
 \eqn{\omega_R = \sqrt{\omega_0^2 - 2\beta^2}\where \frac{dD}{d\omega}\bigg{\rvert}_{\omega=\omega_R}=0}
-Note that for weak damping, or where $\beta \rightarrow 0$, then the resonant frequency approaches the natural frequency of the system $\omega_R \rightarrow \omega_0$.
+Note that for weak damping, or where $\beta \rightarrow 0$, then the resonant frequency approaches the natural frequency of the system $\omega_R \rightarrow \omega_0$. \index{Resonance}
 \\
 % Response functions (omitted since optional, may revisit)
 
@@ -127,14 +130,54 @@ Note that for weak damping, or where $\beta \rightarrow 0$, then the resonant fr
 \section{Lagrangian Mechanics}
 \label{sec:cm-lagrangian}
 
-Lagrangian Mechanics marks the separation between introductory and upper-level, undergraduate mechanics material. Though most courses introduce the Lagrangian as in Eq \ref{eq:cm-lag-def}, there is a more rigorous, rich mathematical underpinning included in Appendix \ref{app:calcvar}.
-
-\eqn{\label{eq:cm-lag-def} \Lag = T - U}
-
-\eqn{\pd{\Lag}{q_i} - \ddt \pd{\Lag}{\dot{q}_i} = 0 \where p_i \equiv \pd{\Lag}{\dot{q_i}}}\
-
-Hamilton's principle, in all its glory:
+Lagrangian Mechanics marks the separation between introductory and upper-level, undergraduate mechanics material. Though most courses introduce the Lagrangian as in Eq \ref{eq:cm-lag-def}, there is a deeper physical principle  motivating the choice of $\Lag$, called Hamilton's Principle:\index{Hamilton's Principle} 
 \quotebox[0.8]{Of all the possible paths along which a dynamical system may move from one point to another within a specified time interval (consistent with any constraints), the actual path followed is that which minimizes the time integral of the difference between the kinetic and potential energies.}
+
+The above principle, when combined with a rigorous understanding of calculus of variations (included in Appendix \ref{app:calcvar}), explains why the conventional form of the Lagrangian is $T - U$. To paraphrase Hamilton, \textit{nature seeks to balance cumulative kinetic and potential energy} by choosing the path that minimizes their cumulative difference. This is formally represented by Eq. \ref{eq:cm:hamilton-principle}, which ultimately leads to the familiar Lagrangian equations of motion (Eq. \ref{eq:cm:lag-eqn}):
+
+\eqn[eq:cm-lag-def]{\Lag = T - U}
+\eqn[eq:cm:hamilton-principle]{\delta \int_{t_1}^{t_2}\left(T - U\right)dt = 0}
+\eqn[eq:cm:lag-eqn]{\pd{\Lag}{q_i} - \ddt \pd{\Lag}{\dot{q}_i} = 0 \where p_i \equiv \pd{\Lag}{\dot{q_i}}}\
+
+% Generalized coordinates
+The above makes use of \textit{generalized coordinates}, denoted by $q_i$, which are a set of $s$ independent parameters used to fully describe the state of the system. For instance, in the case of $n$ particles on 3-space, $s = 3n$. When constraints are imposed, the number of independent parameters is reduced by the number $m$ of constraints, so $s = 3n - m$. The \textit{generalized velocities} are the time derivatives of the generalized coordinates, $\dot{q}_1, \dot{q}_2, ..., \dot{q}_s$. Transforming between Cartesian and generalized coordinates can be expressed as:
+\begin{equation}
+\begin{split}
+		x_{\alpha,i} &= x_{\alpha, i}(q_j, t) \\
+		\dot{x}_{\alpha,i} &= \dot{x}_{\alpha, i}(q_j, \dot{q}_j, t) 
+\end{split}	
+\end{equation}
+
+Where $\alpha = 1, 2, ..., n$, $i = 1, 2, 3$, and $j = 1, 2, ..., s$. The inverse transformations may be written similarly. If there are $k = 1, 2, ..., m$ constraints, they may also be written as in Eq \ref{eq:cm:lag-const-m}. Constraints of this form are called \textit{holonomic}. They interrelate  conventional coordinates and possibly time.
+\begin{equation}
+\begin{split}
+		q_{j} &= q_{j}(x_{\alpha, i}, t) \\
+		\dot{q}_{j} &= \dot{q}_j(x_{\alpha, i}, \dot{x}_{\alpha, i}, t) 
+\end{split}	
+\end{equation}
+
+\eqn[eq:cm:lag-const-m]{f_k(x_{\alpha, i}, t) = 0}
+
+
+% Undetermined Multipliers
+\newpage
+If all the constraints in a system are holonomic, then is always possible to find a proper set of generalized coordinates such that the equations of motion do not reference the constraints. However, if the constraints are expressible in differential form (Eq. \ref{eq:cm:diff-const}), then it is possible to incorporate them directly into the equations of motion as in Eq. \ref{eq:cm:lag-motion-const}.
+\eqn[eq:cm:diff-const]{\sum\limits_{j}\pd{f_k}{q_j}dq_j = 0\where k = 1, ..., m\ \text{and} j = 1, ..., s}
+\eqn[eq:cm:lag-motion-const]{\pd{\Lag}{q_j} - \ddt\pd{\Lag}{\dot{q}_j} + \sum\limits_{k}\lambda_{k}(t)\pd{f_k}{q_j} = 0}
+Where the $\lambda_k(t)$ are the \textit{undetermined Lagrangian multipliers}. These multipliers are closely related to the generalized forces of constraint $Q_j$ by:
+\eqn{Q_j = \sum\limits_{k}\lambda_k \pd{f_k}{q_j}}
+
+
+% Example usage: pendulum
+\subsection{Example: Simple Pendulum}
+The below example shows how Lagrangian formalism can be used to simplify the equations of motion using generalized coordinates:
+
+\texfig[0.35]{cm-lag-pend}{A simple pendulum of length $l$ with a mass $m$ suspended at an angle $\theta$.}
+
+%We must first choose coordinates for the single particle of interest - the suspended mass. We can do this in the Cartesian sense of $(x, y)$, but then would have to impose the constraint $x^2 + y^2 - l^2 = 0$. Fortunately, since the constraint is independent of time, there must exist a set of generalized coordinates where the constraint is implicit. We choose polar coordinates $(r, \theta)$ and so that the constraint is simply $\dot{r}\equiv 0$. 
+\eqn{\Lag = T - U = \frac{1}{2}I\omega^2 - mgy = \frac{1}{2}ml^2\dot{\theta}^2 - (-mgl\cos\theta)}
+\eqn{\pd{\Lag}{\theta} = -mgl\sin\theta,\quad \pd{\Lag}{\dot{\theta}}=ml^2\dot{\theta}}
+\eqn{\ddot{\theta} + \frac{g}{l}\sin\theta = 0\quad\quad \omega_0 \approx \sqrt{\frac{g}{l}},\ \text{for small}\ \theta}
 
 
 
@@ -143,6 +186,13 @@ Hamilton's principle, in all its glory:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hamiltonian Mechanics}
 \label{sec:cm-hamiltonian}
+
+% Introduction definitions
+% Conservation theorems
+% Distinction from Lagrangian
+% "Canonical"
+% ...
+% Example usage: pendulum
 
 \eqn{\Ham = \sum_i q_i \dot{p}_i - \Lag \approx T + U}
 
