@@ -170,6 +170,7 @@ Where the $\lambda_k(t)$ are the \textit{undetermined Lagrangian multipliers}. T
 
 % Example usage: pendulum
 \subsection{Example: Simple Pendulum}
+\label{sec:cm-lag-pend}
 The below example shows how Lagrangian formalism can be used to simplify the equations of motion using generalized coordinates:
 
 \texfig[0.35]{cm-lag-pend}{A simple pendulum of length $l$ with a mass $m$ suspended at an angle $\theta$.}
@@ -186,17 +187,42 @@ The below example shows how Lagrangian formalism can be used to simplify the equ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hamiltonian Mechanics}
 \label{sec:cm-hamiltonian}
+\index{Hamiltonian!Mechanics}
 
-% Introduction definitions
+% Introduction
+\eqn{\Ham = \sum_i p_i \dot{q}_i - \Lag \approx T + U}
+\eqn{\dot{p}_i = -\pd{\Ham}{q_i},\quad \dot{q}_i = \pd{\Ham}{p_i}}
+
+
 % Conservation theorems
+
+
 % Distinction from Lagrangian
-% "Canonical"
-% ...
+
+% "Canonical" - Reference Kip Thorne's article
+
+% Liouville and Hamiltonian Phase Space
+
+% Virial Theorem (should this be in thermo??)
+
+
+
+
 % Example usage: pendulum
+\subsection{Example: Simple Pendulum Revisited}
+The below example shows how the Hamiltonian formalism can be used similarly to how the Lagrangian formalism was used in Sec \ref{sec:cm-lag-pend}.
 
-\eqn{\Ham = \sum_i q_i \dot{p}_i - \Lag \approx T + U}
+\eqn{\Ham = \sum\limits_{i}p_i \dot{q}_i - \Lag = p_{\theta}\dot{\theta} - \Lag = \frac{1}{2}ml^2\dot{\theta}^2 - mgl\cos\theta = T + U = E_{\text{total}}}
+\eqn{\Ham(\theta, p_{\theta}) = \frac{p_{\theta}^2}{2ml^2} - mgl\cos{\theta}}
+\eqn{
+	\begin{align}
+		\dot{\theta} &= &\pd{\Ham}{p_{\theta}} &= \frac{p_{\theta}}{ml^2} \\
+		\dot{p}_{\theta} &= &-\pd{\Ham}{\theta} &= -mgl\sin{\theta} 
+	\end{align}
+}
 
-\eqn{}
+\eqn{\ddot{\theta} = \frac{\dot{p}_{\theta}}{ml^2} \implies \ddot{\theta} + \omega_0^2\sin\theta = 0\where \omega_0 \approx \sqrt{\frac{g}{l}},\ \text{for small}\ \theta}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
