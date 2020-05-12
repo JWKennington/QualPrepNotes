@@ -83,6 +83,7 @@ Similar to the Cartesian Newtonian case, in the absence of external torque ($\ve
 \label{sec:cm-oscillation}
 \index{Oscillation}
 % Harmonic Motion
+\subsection{Harmonic Motion}
 Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) instead of the general wave equation because it's easier to work in one-dimension. That approach leads to the second-order homogeneous equation Eq \ref{eq:cm-sho-de}, with the familiar solutions given by Eq \ref{eq:cm-sho-soln} (complex roots of characteristic equation + Euler's Identity $e^{i\theta} = \cos{\theta} + i\sin{\theta})$. Plugging into $T = \frac{1}{2}m\dot{x}^2$ and $U = \frac{1}{2}kx^2$ gives Eq \ref{eq:cm-sho-energy}.
 
 \eqn{\label{eq:cm-hooke} F(x) = -kx,\quad U = \frac{1}{2}kx^2}\index{Hooke's Law}
@@ -94,6 +95,7 @@ Most treatments of oscillation begin with Hooke's Law (Eq \ref{eq:cm-hooke}) ins
 
 
 % Damped Oscillation
+\subsection{Damped Oscillation}
 When a damping force is added like Eq \ref{eq:cm-damp-force}, the equation of motion has an extra term \index{Oscillation!Damped}
 \eqn{\label{eq:cm-damp-force} F_{\mathrm{damp}} = -b\dot{x}}
 \eqn{\label{eq:cm-sho-de} \ddot{x} + 2\beta \dot{x} + \omega_0^2x = 0\where \beta = \frac{b}{2m}}
@@ -112,6 +114,7 @@ Recall the general behavior for the above solution categories: $(i)$ underdamped
 
 
 % Driven Oscillation
+\subsection{Driven Oscillation}
 In the case of a driving force (sinusoidal for simplicity), the equation of motion becomes inhomogeneous, and we must solve for the particular solution $x_p(t)$ or "steady-state" effects (as opposed to the complementary solution $x_c(t)$ or "transient" effects of the homogeneous equation given by Eq \ref{eq:cm-dho-soln}). The steady state effects are dominant for $t >> 1/\beta$. \index{Oscillation!Driven}\index{Waves!Transient}\index{Waves!Stead-state}
 
 \eqn{\ddot{x} + 2\beta \dot{x} + \omega_0^2x = A\cos{\omega t}\where A = \frac{F_0}{m}}
@@ -127,19 +130,23 @@ Note that for weak damping, or where $\beta \rightarrow 0$, then the resonant fr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          LAGRANGIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Lagrangian Mechanics}
 \label{sec:cm-lagrangian}
 
-Lagrangian Mechanics marks the separation between introductory and upper-level, undergraduate mechanics material. Though most courses introduce the Lagrangian as in Eq \ref{eq:cm-lag-def}, there is a deeper physical principle  motivating the choice of $\Lag$, called Hamilton's Principle:\index{Hamilton's Principle} 
+Lagrangian Mechanics marks the separation between introductory and upper-level, undergraduate mechanics material. 
+\subsection{Principle of Least Action}
+Though most courses introduce the Lagrangian as in Eq \ref{eq:cm-lag-def}, there is a deeper physical principle  motivating the choice of $\Lag$, called Hamilton's Principle:\index{Hamilton's Principle} 
 \quotebox[0.8]{Of all the possible paths along which a dynamical system may move from one point to another within a specified time interval (consistent with any constraints), the actual path followed is that which minimizes the time integral of the difference between the kinetic and potential energies.}
 
-The above principle, when combined with a rigorous understanding of calculus of variations (included in Appendix \ref{app:calcvar}), explains why the conventional form of the Lagrangian is $T - U$. To paraphrase Hamilton, \textit{nature seeks to balance cumulative kinetic and potential energy} by choosing the path that minimizes their cumulative difference. This is formally represented by Eq. \ref{eq:cm:hamilton-principle}, which ultimately leads to the familiar Lagrangian equations of motion (Eq. \ref{eq:cm:lag-eqn}):
+The above principle, when combined with a rigorous understanding of calculus of variations (included in Appendix \ref{app:calcvar}), explains why the conventional form of the Lagrangian is $T - U$. To paraphrase Hamilton, \textit{nature seeks the path of least action} by converting the least amount of potential energy into kinetic energy. This is formally represented by Eq. \ref{eq:cm:hamilton-principle}, which ultimately leads to the familiar Lagrangian equations of motion (Eq. \ref{eq:cm:lag-eqn}):
 
 \eqn[eq:cm-lag-def]{\Lag = T - U}
 \eqn[eq:cm:hamilton-principle]{\delta \int_{t_1}^{t_2}\left(T - U\right)dt = 0}
 \eqn[eq:cm:lag-eqn]{\pd{\Lag}{q_i} - \ddt \pd{\Lag}{\dot{q}_i} = 0 \where p_i \equiv \pd{\Lag}{\dot{q_i}}}\
 
 % Generalized coordinates
+\subsection{Generalized Coordinates}
 The above makes use of \textit{generalized coordinates}, denoted by $q_i$, which are a set of $s$ independent parameters used to fully describe the state of the system. For instance, in the case of $n$ particles on 3-space, $s = 3n$. When constraints are imposed, the number of independent parameters is reduced by the number $m$ of constraints, so $s = 3n - m$. The \textit{generalized velocities} are the time derivatives of the generalized coordinates, $\dot{q}_1, \dot{q}_2, ..., \dot{q}_s$. Transforming between Cartesian and generalized coordinates can be expressed as:
 \begin{equation}
 \begin{split}
@@ -160,7 +167,7 @@ Where $\alpha = 1, 2, ..., n$, $i = 1, 2, 3$, and $j = 1, 2, ..., s$. The invers
 
 
 % Undetermined Multipliers
-\newpage
+\subsection{Undetermined Multipliers}
 If all the constraints in a system are holonomic, then is always possible to find a proper set of generalized coordinates such that the equations of motion do not reference the constraints. However, if the constraints are expressible in differential form (Eq. \ref{eq:cm:diff-const}), then it is possible to incorporate them directly into the equations of motion as in Eq. \ref{eq:cm:lag-motion-const}.
 \eqn[eq:cm:diff-const]{\sum\limits_{j}\pd{f_k}{q_j}dq_j = 0\where k = 1, ..., m\ \text{and} j = 1, ..., s}
 \eqn[eq:cm:lag-motion-const]{\pd{\Lag}{q_j} - \ddt\pd{\Lag}{\dot{q}_j} + \sum\limits_{k}\lambda_{k}(t)\pd{f_k}{q_j} = 0}
@@ -185,27 +192,61 @@ The below example shows how Lagrangian formalism can be used to simplify the equ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         HAMILTONIAN MECHANICS         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Hamiltonian Mechanics}
 \label{sec:cm-hamiltonian}
 \index{Hamiltonian!Mechanics}
 
 % Introduction
-\eqn{\Ham = \sum_i p_i \dot{q}_i - \Lag \approx T + U}
+The Hamiltonian formulation of mechanics is most simply introduced as the Legendre transform of the Lagrangian formulation in the variable $\dot{q}$. The definition of the Hamiltonian (Eq. \ref{eq:cm-damp-force}) is an application of the more general Legendre transformation (Eq. \ref{eq:app-calc-var-legendre}). For more on Legendre Transforms, see Appendix \ref{sec:app-calc-var-legendre}.
+\eqn[eq:cm-ham-def]{\Ham(p, q) = \sum_i p_i \dot{q}_i - \Lag \approx T + U}
+The equations of motion are then given by the coupled, first-order differential equations:
 \eqn{\dot{p}_i = -\pd{\Ham}{q_i},\quad \dot{q}_i = \pd{\Ham}{p_i}}
+
+% Distinction from Lagrangian
+\subsection{Comparison with Lagrangian Formalism}
+Since Lagrangian and Hamiltonian formulations are equivalent in that the produce identical dynamics, the most important distinction between them is the number and type of equations they produce. The Lagrangian approach produces $N$, second-order differential equations, whereas the Hamiltonian approach produces $2N$, first-order differential equations, as summarized in the below table:
+
+\begin{center}
+	\begin{tabular}{lcl}
+	 \textbf{Formulation} & \textbf{Number of Equations} & \textbf{Type of Equations} \\
+	\hline
+	 Lagrangian & $N$ & Second-order \\
+	 Hamiltonian & $2N$ & First-order \\
+	\end{tabular}
+\end{center}
+
+% "Canonical" terminology
+It is worth mentioning briefly that Hamilton's equations of motion are called the \textit{canonical} equations of motion, with $p_i$ and $q_i$ being the \textit{canonical variables}. This terminology signifies a preference for Hamilton's formulation, largely based on the nice, symmmetric form of Eq. \ref{eq:cm-ham-def}. There are deeper reasons to prefer the Hamiltonian to the Lagrangian, such as the connection with symplectic forms in the phase space of the system being compatible with the Hamiltonian and canonical transformations, but these reasons are out of scope for this review.
 
 
 % Conservation theorems
+\subsection{Relation to Energy}
+The Hamiltonian can also be derived by modifying the Lagrangian to make the time derivative vanish. The form of the Lagrangian's full time derivative is given by Eq \ref{eq:cm-cons-ham-deriv-1}, where we can set the last term equal to 0 if the system is closed. We use Euler's equation (Eq. \ref{eq:cm:lag-eqn}) to substitute for $\pd{\Lag}{q_i}$ in Eq. \ref{eq:cm-cons-ham-deriv-2}, and lastly exploit the product rule to pull the time derivative out in Eq. \ref{eq:cm-cons-ham-deriv-3}. This result shows that the Hamiltonian is, by default, time independent.  
 
 
-% Distinction from Lagrangian
+\eqn[eq:cm-cons-ham-deriv-1]{\ddt[\Lag] = \sum\limits_i\pd{\Lag}{q_i}\dot{q}_i + \sum\limits_i\pd{\Lag}{\dot{q}_i}\ddot{q}_i + \pd{\Lag}{t}\where \pd{\Lag}{t}=0\ \text{for a closed system}}
+\eqn[eq:cm-cons-ham-deriv-2]{\ddt[\Lag]=\sum\limits_i \dot{q}_i\ddt\pd{\Lag}{\dot{q}_i}+ \sum\limits_i\pd{\Lag}{\dot{q}_i}\ddot{q}_i \where \pd{\Lag}{q_i} = \ddt \pd{\Lag}{\dot{q}_i}}
+\eqn[eq:cm-cons-ham-deriv-3]{\ddt[\Lag] - \sum\limits_i\ddt\left(\dot{q}\pd{\Lag}{\dot{q}_i}\right) = \ddt \left(\Lag - \sum\limits_i q_i p_i \right) = 0}
+\eqn{\implies \sum\limits_i p_i q_i - \Lag = \Ham = \text{constant}}
 
-% "Canonical" - Reference Kip Thorne's article
+\newpage
+The Hamiltonian may be constant in time, but showing that this quantity represents the total energy of the system requires a few more steps:
+\eqn[eq:cm-cons-ham-1]{\pd{\Lag}{\dot{q}_i} = \pd{\left(T - U\right)}{\dot{q}_i} = \pd{T}{\dot{q}_i}\quad \text{iff}\quad \pd{U}{\dot{q}_i}=0}
+\eqn[eq:cm-cons-ham-2]{\Ham = \sum\limits_i \dot{q}_i \pd{T}{\dot{q}_i} - (T - U) = T + U = E\quad \text{iff}\quad\sum\limits_i \dot{q}_i \pd{T}{\dot{q}_i} = 2T}
+The Hamiltonian thus is equivalent to the energy of the system under two conditions, represented above in the "if and only if" statements from Eqns \ref{eq:cm-cons-ham-1} and \ref{eq:cm-cons-ham-2} respectively. To state these conditions more explicitly:
+
+\begin{enumerate}
+	\item The potential must be velocity independent, thus allowing for the elimination of the $\pd{U}{\dot{q}_i}$ terms.
+	\item Coordinate transformation from Cartesian to generalized coordinates must be independent of time, ensuring kinetic energy is a homogeneous quadratic function of the conjugate momenta variables $\dot{q}_i$, e.g. $T = \sum_{i,j}a_{ij}\dot{q}_i\dot{q}_j$.
+\end{enumerate}
+
 
 % Liouville and Hamiltonian Phase Space
+\subsection{Liouville's Theorem}
 
 % Virial Theorem (should this be in thermo??)
-
-
+\subsection{Virial Theorem}
 
 
 % Example usage: pendulum
@@ -214,12 +255,14 @@ The below example shows how the Hamiltonian formalism can be used similarly to h
 
 \eqn{\Ham = \sum\limits_{i}p_i \dot{q}_i - \Lag = p_{\theta}\dot{\theta} - \Lag = \frac{1}{2}ml^2\dot{\theta}^2 - mgl\cos\theta = T + U = E_{\text{total}}}
 \eqn{\Ham(\theta, p_{\theta}) = \frac{p_{\theta}^2}{2ml^2} - mgl\cos{\theta}}
-\eqn{
-	\begin{align}
-		\dot{\theta} &= &\pd{\Ham}{p_{\theta}} &= \frac{p_{\theta}}{ml^2} \\
-		\dot{p}_{\theta} &= &-\pd{\Ham}{\theta} &= -mgl\sin{\theta} 
-	\end{align}
-}
+
+\begin{subequations}
+\begin{alignat}{3}
+	\dot{\theta} &= &\pd{\Ham}{p_{\theta}} &= \frac{p_{\theta}}{ml^2} \\
+	\dot{p}_{\theta} &= &-\pd{\Ham}{\theta} &= -mgl\sin{\theta} 
+\end{alignat}	
+\end{subequations}
+
 
 \eqn{\ddot{\theta} = \frac{\dot{p}_{\theta}}{ml^2} \implies \ddot{\theta} + \omega_0^2\sin\theta = 0\where \omega_0 \approx \sqrt{\frac{g}{l}},\ \text{for small}\ \theta}
 
@@ -228,6 +271,7 @@ The below example shows how the Hamiltonian formalism can be used similarly to h
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         CENTRAL FORCE MOTION          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Central Force Motion}
 \label{sec:cm-cfm}
 
