@@ -5,6 +5,8 @@
 \chapter{Calculus of Variations}
 \index{Calculus of Variations}
 \label{app:calcvar}
+
+\section{Variational Formalism}
 Here we briefly review some key aspects of the calculus of variations, with an emphasis on Euler's equations and common notations used in physics texts. The basic problem is to determine the function $y$ such that the integral $J$ given by Eq \ref{eq:app-cov:j} (properly called a functional\footnote{A functional is is a generalization of a function that depends on infinitely many parameters. In this case, $J$ depends on the value of $y$ at \textit{every} point between $x_1$ and $x_2$, so we could also write $J\big(\{y_i\}\big)$ where $\{y_i\}=\{y(x_i):x_i\in[x_1, x_2]\}$. Note that this set $\{y_i\}$ contains an uncountably infinite number of elements, hence the "functional" $J$ has infinite degrees of freedom.}) is an extremum (maximum or minimum). Physics is often concerned with the minimum case, in accordance with Hamilton's Principle. Also, when the $x$ variable is replaced with time $t$, $J$ is called the \textit{action}\index{Action}. 
 
 
@@ -24,12 +26,13 @@ For $J$ to be a minimum given $Y(x)$, that means that \textit{any neighboring fu
 
 Note that this condition isn't sufficient, we'd also need to show the second-order partial derivative to be positive; fortunately in most physics applications this isn't required. %The familiar Lagrangian equation from Sec. \ref{sec:cm-lagrangian} is the special case of $f=\Lag$, though the variable $x$ from Eq. \ref{eq:app-cov:j} shouldn't be taken to mean the "x-coordinate," rather, it represents the familiar, generalized coordinates $q$ we're used to seeing in the Lagrangian. 
 
+\section{$\delta$ Notation}
 Also worth noting, we often use a shorthand by representing the variation with a $\delta$ symbol in place of the partial derivatives of the parameter $\alpha$. This gives a shorthand notation for the extremum condition, as in Eq. \ref{eq:app-cov:short}:
 \eqn{\delta J \equiv \pd{J}{\alpha}d\alpha,\quad \delta y \equiv \pd{y}{\alpha}d\alpha,\quad ...}
 \eqn[eq:app-cov:short]{\delta J = \delta\int_{x_1}^{x_2}f\left\{y, y'; x\right\}dx = 0}
 
 % Euler's Equation Derivation
-\newpage
+\section{Euler's Equation}
 Euler's equation, the more general form of the familiar Euler-Lagrange equation, can be derived from the above extremum condition for $J$. The below derivation of the Euler equation begins by computing the partial derivatives of $f$ of the new parameter $\alpha$, and then substitutes known quantities from Eq. \ref{eq:app-cov:add-alpha}:
 
 \eqn{\pd{J}{\alpha} = \pd{}{\alpha}\int_{x_1}^{x_2}f\big\{y(x), y'(x); x\big\}dx = \int_{x_1}^{x_2}\left(\pd{f}{y}\pd{y}{\alpha} + \pd{f}{y'}\pd{y'}{\alpha}\right)dx}
@@ -50,9 +53,12 @@ In order for the above to be equal to zero, the first term must vanish since $\e
 
 
 % Constraints
+\section{Adding Constraints}
 It is also possible to add constraints to the Euler equation; we discuss two types of constraints. The simpler type, \textit{function} constraint takes the form of a second function $g$. In such a case, the Euler equation is modified by the inclusion of an \textit{undetermined Lagrangian multiplier} $\lambda$ scaled by partial derivatives of $g$. The general case of $n$ variables and $m$ constraints is given by Eq. \ref{eq:app-cov:euler-f-const} where $i = 1, 2, ..., n$ and $j = 1, 2, ..., m$.
 
 \eqn{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} + \lambda(x)\pd{g}{y}= 0\where g\{y, y'; x\} = 0}
+
+This gives the form of Euler's Equation with a function constraint:
 
 \eqn[eq:app-cov:euler-f-const]{\boxed{\pd{f}{y_i} - \frac{d}{dx}\pd{f}{y'_i} + \sum\limits_{j}\lambda_j(x)\pd{g_j}{y_i} = 0}\quad \text{Euler's Equation with function constraint}}\
 
@@ -61,4 +67,16 @@ A constraint may also be added in the form of an integral equation (or additiona
 
 \eqn[eq:app-cov:euler-i-const]{\boxed{\pd{f}{y} - \frac{d}{dx}\pd{f}{y'} + \lambda \left(\pd{g}{y} - \frac{d}{dx}\pd{g}{y'}\right) = 0}\quad \text{Euler's Equation with integral constraint}}\
 
-% delta notation
+% Legendre Transformation
+\section{Legendre Transformation}
+\label{sec:app-calc-var-legendre}
+The Legendre transformation takes a convex function $f(x)$, $f''(x) > 0$, and turns it into a new function $g$ of a new variable $p$ under an extremal condition \cite{arnoldMathematicalMethodsClassical1997}. Given an arbitrary number $p$, there exists a unique point $x(p)$ such that the function $F(p, x) = px - f(x)$ has a maximum at the point $x = x(p)$. Note that $x(p)$ is therefore defined by the extremal condition $\pd{F}{x}=0$.
+\eqn[eq:app-calc-var-legendre]{g(p) = F(p, x(p)) = px(p) - f(x)}
+As a geometric interpretation, the line defined by $y=px$ will be maximally greater than $f(x)$ at the point $x=x(p)$, where the slope of $f(x) = p$ (depicted below):
+
+\texfig[0.35]{app-calc-var-legendre}{Legendre Transformation, adapted from Arnold \cite{arnoldMathematicalMethodsClassical1997}.}
+
+The Legendre transform is \textit{involutive}, meaning that its square is the identity, e.g. $L(L(f))\equiv f$. Due to this duality, we call $f$ the \textit{Young dual} of $g$, and vice versa. This relates to Young's inequality: $px <f(x) + g(p)$ for any $x$ and $p$. Note that in general $p$ is a free variable, not a strict function of $x$; rather, $p$ determines $x(p)$. Since $f(x(p)) = g(p)$, $p$ is often called the \textit{conjugate} variable to $x$. Small note: this "conjugation" refers to Young duality, not complex conjugation of $\mathbb{C}$ (which is another involution itself).
+
+
+
