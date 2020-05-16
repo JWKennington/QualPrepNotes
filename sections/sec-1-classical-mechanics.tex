@@ -353,17 +353,40 @@ Precession, only occurs if exists deviations from $1/r^2$, like perturbations fr
 \newpage
 \section{Systems of Particles}
 \label{sec:cm-particles}
+Many properties of the system can be decomposed in that of the center of mass $\vec{R}$ and that of the system about the center of mass. Some other common variables are the mass of the system $M$, the force of the $\alpha$th particle on the $\beta$th particle, $\vec{f}_{\alpha\beta}$, and the mass and position of the $\alpha$th particle, $m_{\alpha}$ and $\vec{r}_{\alpha}$ respectively. External forces on particle $\alpha$ are denoted $\vec{F}_{\alpha}^{\left(e\right)}$, and the momentum of the system is denoted $\vec{P}$.
 
-% Center of Mass
-\eqn{x}
+% Energy and Momenta
+\subsection{Energy and Momenta}
 
-% Linear Momentum
-% Angular Momentum
-% Energy
-% Elastic Collision
-% Inelastic Collision
-% scattering and cross sections
-% Rutherford
+% 	Center of Mass
+The center of mass $\vec{R}$ is an important feature of a system of particles, and is the "balance" point for the effects of external forces and torques. 
+\eqn{\vec{R} = \frac{1}{M}\sum\limits_{\alpha}m_{\alpha}\vec{r}_{\alpha} = \frac{1}{M}\int\vec{r}\ dm}
+% 	Linear Momentum
+The center of mass $\vec{R}$ moves like a single particle of mass $M$ acted on by the net eternal force $\vec{F}=\sum_{\alpha}F_{\alpha}^{(e)}$. Consequently, the linear momentum $P$ of the system is the same as a single particle of mass $M$ moving with velocity $\dot{\vec{R}}$. Also note, the \textit{total} linear momentum of the system is conserved and equal to $\vec{P}$ if the net external force is zero.
+\eqn{\dot{\vec{P}} = M\ddot{\vec{R}} = \vec{F},\quad\quad \dot{\vec{p}}_{\alpha}=\vec{F}_{\alpha}^{(e)} + \sum\limits_{\beta}\vec{f}_{\alpha\beta}}
+% 	Angular Momentum
+If the net external torque $\vec{N}^{(e)}$ about a given axis is zero, then the total angular momentum of the system about that axis is conserved. Also note, the total internal torque must vanish if the forces are central, since $\vec{r}_{\alpha\beta}\times \vec{f}_{\alpha\beta} = 0$ for central forces.
+\eqn{\vec{L} = \vec{R}\times \vec{P} + \sum\limits_{\alpha}\vec{r}_{\alpha}'\times \vec{p}_{\alpha}',\quad\quad \vec{L}_{\alpha} = \vec{r}_{\alpha}\times \vec{p}_{\alpha}, \quad\quad \vec{\dot{L}} = \sum\limits_{\alpha}\vec{r}_{\alpha}\times \vec{F}_{\alpha}^{(e)} = \vec{N}^{(e)}}
+% 	Energy
+The total kinetic energy of the system $T$ is equal to the kinetic energy of the center of mass and the kinetic energy of the motion of individual particles relative to the center of mass. Total energy for a conservative system is constant.
+\eqn{T = \half MV^2 + \sum\limits_{\alpha}\half m_{\alpha}{v_{\alpha}'}^2}
+
+% Collisions
+\subsection{Collisions}
+We follow the convention of an incident particle striking a stationary particle in the laboratory (\textbf{LAB}) frame, and transform to the center of mass (\textbf{CM}) frame to exploit conservation laws. Primed quantities, $x'$, refer to the \textbf{CM} frame, $\vec{u}_i$ are initial velocities, $\vec{v}_i$ are final velocities. Since particle 2 is initially at rest, the velocity of the center of mass (and reverse velocity of particle 2 in \textbf{CM} frame) is given by:
+\eqn{\vec{V} =\frac{m_1 \vec{u}_1}{m_1 + m_2} = -\vec{u}_2'}
+
+% 	Elastic Collision
+\newpage
+For \textit{elastic} collisions, masses do not change and kinetic energy is conserved. In the \textbf{CM} frame for elastic collisions, the speeds are equal before and after the collision: $u_1' = v_1',\quad u_2' = v_2'$, moving in exactly opposite directions.
+\eqn{\tan{\psi} = \frac{\sin\theta}{\cos\theta + \left(m_1 / m_2\right)}}
+% 	Inelastic Collision
+
+% Scattering and cross sections
+\subsection{Scattering and Cross Sections}
+% 	Rutherford
+
+\subsection{Rocket Motion}
 % Rocket Motion
 
 
