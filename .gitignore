@@ -275,5 +275,3 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
-# Inkscape files
-*.svg
