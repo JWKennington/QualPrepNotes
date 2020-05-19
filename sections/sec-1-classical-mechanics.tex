@@ -424,17 +424,18 @@ In the case of Rutherford scattering via electrostatic repulsion, the differenti
 In cases where a local coordinate system undergoes nontrivial motion, it is often easier to use a noninertial reference frame than to attempt the intricacies of the transformation to a fixed frame.
 % Rotating coordinate systems
 \subsection{Rotating Coordinate System}
-
+Any infinitesimal motion can be represented as a rotation about a particular axis. We adopt the convention that the $x_i$ system undergoes an infinitesimal rotation $\delta\vec{\theta}$ such that $\wrap{d\vec{r}}_{\text{fixed}} = d\vec{\theta}\times\vec{r}$. Differentiating gives $\wrap{d\vec{r}/dt}_{\text{fixed}} = \vec{\omega}\times\vec{r}$, for $P$ fixed in the $x_i$ system. Including motion in the rotating frame gives the general Eq. \ref{eq:cm-noninert-gen-vec}. Note that $\dot{\vec{\omega}}$ is the same in both frames, since $\vec{\omega}\times \vec{\omega} = 0$.
 \texfig[0.4]{cm-noninert-setup}{The general configuration we use, where the $x_i$ system is rotating and the $x_i'$ is fixed in the ambient space. The rotating frame is related to the fixed frame by $\vec{R}$, such that $\vec{r}' = \vec{R} + \vec{r}$.}
-\eqn{\wrap{\frac{d\vec{Q}}{dt}}_{\text{fixed}} = \wrap{\frac{d\vec{Q}}{dt}}_{\text{rotating}} + \vec{\omega}\times\vec{Q}}
+\eqn[eq:cm-noninert-gen-vec]{\wrap{\frac{d\vec{Q}}{dt}}_{\text{fixed}} = \wrap{\frac{d\vec{Q}}{dt}}_{\text{rotating}} + \vec{\omega}\times\vec{Q}}
 \eqn{\vec{v}_f = \vec{V} + \vec{v}_r + \vec{\omega}\times\vec{r}}
+The velocity in the fixed frame $\vec{v}_f$ can be thus written in terms of the linear velocity of the moving origin $\vec{V}$, the velocity in the rotating frame $\vec{v}_r$ and the angular velocity of the rotating frame $\vec{\omega}$. The term $\vec{\omega}\times\vec{r}$ represents the velocity due to rotation of the moving axes.
 % Centrifugal and Coriolis Forces
 \subsection{Centrifugal and Coriolis Forces}
-Paragraph about derivation, with different terms listed inline
+Deriving the expression for acceleration introduces a couple new terms, which end up becoming the Centrifugal and Coriolis forces when scaled by inertial mass.  Using the above, we can take time derivatives in the fixed frame to find $\dot{\vec{v}}_f = \dot{\vec{V}} + \dot{\vec{v}}_r + \dot{\vec{\omega}}\times\vec{r} + \vec{\omega}\times\dot{\vec{r}}$. These terms can be rearranged using the above relations to $\vec{F}_{\text{eff}} = \vec{F}_f - m\ddot{\vec{R}}_f - m\dot{\vec{\omega}}\times\vec{r} - m\vec{\omega}\times\wrap{\vec{\omega}\times\vec{r}} - 2m\vec{\omega}\times\vec{v}_r$, which gives the effective force perceived in the rotating frame. The latter two terms give the Centrifugal and Coriolis forces:
 \eqn{\vec{F}_{\text{Cfl}} = -m\vec{\omega}\times \wrap{\vec{\omega}\times\vec{r}}, \quad\quad \vec{F}_{\text{Cor}} = -2m\vec{\omega}\times\vec{v}_r}
 % Motion Relative to Earth
 \subsection{Motion Relative to Earth}
-Paragraph about deflection effects, drift to right of velocity vector in Northern Hemisphere
+When applied to a rotating frame on the Earth's surface, the above the centrifugal force term modifies the gravitational vector as $\vec{g} = \vec{g}_0 - \vec{\omega}\times\wraph{\vec{\omega}\times\wrap{\vec{r}+\vec{R}}}$, which defines "flat" surfaces. The Coriolis force causes a drift to right/left of velocity vector in northern/southern hemisphere.
 \eqn{\vec{F}_{\text{eff}} = \vec{S} + m\vec{g} - 2m\vec{\omega}\times\vec{v}_r}
 
 
