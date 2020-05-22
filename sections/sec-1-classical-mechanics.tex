@@ -427,7 +427,7 @@ In cases where a local coordinate system undergoes nontrivial motion, it is ofte
 Any infinitesimal motion can be represented as a rotation about a particular axis. We adopt the convention that the $x_i$ system undergoes an infinitesimal rotation $\delta\vec{\theta}$ such that $\wrap{d\vec{r}}_{\text{fixed}} = d\vec{\theta}\times\vec{r}$. Differentiating gives $\wrap{d\vec{r}/dt}_{\text{fixed}} = \vec{\omega}\times\vec{r}$, for $P$ fixed in the $x_i$ system. Including motion in the rotating frame gives the general Eq. \ref{eq:cm-noninert-gen-vec}. Note that $\dot{\vec{\omega}}$ is the same in both frames, since $\vec{\omega}\times \vec{\omega} = 0$.
 \texfig[0.4]{cm-noninert-setup}{The general configuration we use, where the $x_i$ system is rotating and the $x_i'$ is fixed in the ambient space. The rotating frame is related to the fixed frame by $\vec{R}$, such that $\vec{r}' = \vec{R} + \vec{r}$.}
 \eqn[eq:cm-noninert-gen-vec]{\wrap{\frac{d\vec{Q}}{dt}}_{\text{fixed}} = \wrap{\frac{d\vec{Q}}{dt}}_{\text{rotating}} + \vec{\omega}\times\vec{Q}}
-\eqn{\vec{v}_f = \vec{V} + \vec{v}_r + \vec{\omega}\times\vec{r}}
+\eqn[eq:cm-noninert-vf]{\vec{v}_f = \vec{V} + \vec{v}_r + \vec{\omega}\times\vec{r}}
 The velocity in the fixed frame $\vec{v}_f$ can be thus written in terms of the linear velocity of the moving origin $\vec{V}$, the velocity in the rotating frame $\vec{v}_r$ and the angular velocity of the rotating frame $\vec{\omega}$. The term $\vec{\omega}\times\vec{r}$ represents the velocity due to rotation of the moving axes.
 % Centrifugal and Coriolis Forces
 \subsection{Centrifugal and Coriolis Forces}
@@ -446,18 +446,36 @@ When applied to a rotating frame on the Earth's surface, the above the centrifug
 \newpage
 \section{Rigid Bodies}
 \label{sec:cm-rigid}
+Rigid bodies are physical objects with no relative internal motion, and can be modeled as either a system of particles whose relative distances are absolutely fixed, or as a matter-density field whose relative gradient is fixed. The motion of the body can be decomposed into that of its center of mass (CM) and rotation about that point. The position of the body can be described with 6 quantities, the $\RThree$ location of the CM, and the three Eulerian angles (defined below). Rotation in 3-dims requires a more complicated mathematical object, the \textit{inertia tensor}, which we define below.
 % Inertia Tensor
 \subsection{Inertia Tensor}
-The inertia tensor $\tens{I} \in S^2\wrap{\RThree} \subset \mathcal{T}^{2}_{0}$ such that $\vec{I}: \RThree \times \RThree \rightarrow \R$. Where when acting on angular velocity $\omega$, produces $\tens{I}\wrap{\omega, \omega} = T_{\text{rot}}$. We can raise an index on $\tens{I}$ to produce a linear operator $\tens{I}: \RThree \to \RThree$ such that $\vec{L} = \tens{I}\vec{\omega}$
-%   Basic Definition
-%   Tensor Definition
+% Derivation
+For a system of masses $m_{\alpha}$, we can use results from rotational reference frames to describe the velocity of the particles in the fixed frame $\vec{v}_{\alpha}$ in terms of the velocity of the CM $\vec{V}$ and the frame rotation $\omega$. Since the particles do not move in the body frame, the velocity takes a restricted form of Eq. \ref{eq:cm-noninert-vf}. Computing the kinetic energy, we observe that the \textit{components of the inertia tensor relate the rotational kinetic energy to the angular velocity}.
+\eqn{\vec{v}_{\alpha} =\vec{V} + \vec{\omega}\times \vec{r}_{\alpha} \where\vec{v}_r = \wrap{\ddt[\vec{r}]}_{\text{rot}}\equiv 0}
+\eqn[eq:cm-inert-tens-1]{T = \sum\limits_{\alpha} m_{\alpha}\vec{v}_{\alpha}^2 = \half\sum\limits_{\alpha}m_{\alpha}V^2 + \half\sum\limits_{\alpha}m_{\alpha}\wrap{\vec{\omega}\times\vec{r}_{\alpha}} = T_{\text{trans}} + T_{\text{rot}},\ \text{resp.}}
+\eqn{\begin{split}
+T_\text{rot} &= \half\sum\limits_{\alpha}m_{\alpha}\wraph{\omega^2r_{\alpha}^2 - \wrap{\vec{\omega}\cdot \vec{r}_{\alpha}}^2} = 
+	\half\sum\limits_{\alpha}\sum\limits_{i,j}m_{\alpha}\wraph{\omega_i\omega_j\delta_{ij}\wrap{\sum\limits_k x_{\alpha, k}^2} - \omega_i\omega_j x_{\alpha,i}x_{\alpha,j}}\\
+	&=\half\sum\limits_{i,j}\omega_i\omega_j\sum\limits_{\alpha}m_{\alpha}\wrap{\delta_{ij}\sum\limits_k x_{\alpha,k}^2 - x_{\alpha,i}x_{\alpha,j}} = \half\sum\limits_{\alpha}\tens{I}_{ij}\omega_i\omega_j
+\end{split}}
+\eqn{\boxed{
+	\mathcal{I}_{ij}\equiv\sum\limits_{\alpha}m_{\alpha}\wrap{\delta_{ij}\sum\limits_k x_{\alpha,k}^2 - x_{\alpha,i}x_{\alpha,j}} = 
+	\int_V\rho(\vec{r})\wrap{\delta_{ij}\sum_k x_k^2 - x_ix_j}dv
+}}
+Several notes on the above derivation. In Eq \ref{eq:cm-inert-tens-1} we are able to omit the cross-term $\sum_{\alpha}m_{\alpha}\vec{V}\cdot \vec{\omega}\times\vec{r}_{\alpha}$ because it can be factored to $\vec{V}\cdot\vec{\omega}\times\wrap{\sum_{\alpha}m_{\alpha}\vec{r}_{\alpha}} = \vec{V}\cdot\vec{\omega}\times M\vec{R}$, and $\vec{R} = 0$ since the origin of the rotating frame is the CM. In the following equation, $\vec{r}_{\alpha} = \wrap{x_{\alpha,1},x_{\alpha,2},x_{\alpha,3}}$, and we exploit the fact that $\wrap{\vec{A}\times\vec{B}}^2 = A^2B^2 - \wrap{\vec{A}\cdot \vec{B}}^2$, as well as $\omega_i = \sum_j \delta_{ij} \omega_j$. Note that in the most restricted (symmetric) case we recover $T_{\text{rot}} = \half I \omega^2$, where $I$ is the moment of inertia $I = \tens{I}_{11} = \tens{I}_{22} = \tens{I}_{33}$.
+
+% Formal Definition
+More formally, the inertia tensor $\tens{I} \in S^2\wrap{\RThree} \subset \mathcal{T}^{2}_{0}$ is a rank-2 symmetric tensor over the vector field $\RThree$, $\vec{I}: \RThree \times \RThree \rightarrow \R$, such that when acting on angular velocity vectors $\omega$, produces the rotational kinetic energy (doubled, since summing over all permutations of symmetric indices), $\tens{I}\wrap{\omega, \omega} = 2T_{\text{rot}}$. We can raise an index on $\tens{I}$ to produce a linear operator $\tens{I}: \RThree \to \RThree$ such that $\vec{L} = \tens{I}\vec{\omega}$. Using the metric dual map $L: \RThree \to \dual{\RThree}$ where $L(v) \equiv (v|\cdot)$ such that $L(v)(w)\equiv(v|w)$, the inertia tensor can be written:
+\eqn{\boxed{\tens{I} = \sum\limits_{\alpha}m_{\alpha} \wrap{r_{\alpha}^2g - L\wrap{r_{\alpha}} \otimes L\wrap{r_{\alpha}}},\quad T_{\text{rot}}=\tens{I}_{ij}\omega^i\omega^j,\quad L^i = \tens{I}^{i}{}_{j}\omega^j = g^{il}\tens{I}_{lj}\omega^j}}
 %   Similarity Transformation
-%   Rotational Kinetic Energy
-%   Angular Momentum
 
 \subsection{Principal Axes of Inertia}
 %   Principal Inertia axes
+The \textit{principal axes of inertia} are a basis $\{\hat{e}_i\}$ that diagonalize the inertia tensor, such that $\tens{I}_{ij}=\delta_{ij}I_i$, where the $i$th diagonal element is the $i$th moment of inertia. In this basis, the expressions for rotational kinetic energy and angular momentum are considerably simplified:
+\eqn{T_\text{rot} = \half\sum_iI_i\omega_i^2,\quad\quad L_i = I_i\omega_i}
+Determining the principal axes of inertia amounts to solving the characteristic equation (eigenvalue problem) of $\norm{\wraph{\tens{I}}_{\{\hat{e}_i\}} - \lambda} = 0$. The three eigenvalues are the \textit{principal moments of inertia} and correspond to the principal axes of inertia. If the rotation takes place about one of the principal axes, then the moment of inertia is completely specified by the corresponding principal moment of inertia, such that $\vec{L} = I_i\vec{\omega} \iff \hat{e}_{\text{rot}} = \hat{e}_i$. It is often possible to determine the principal axes by examining the symmetry of the body in question. Some special cases have names: $I_1 = I_2 = I_3$ is called \textit{spherical top}, $I_1 = I_2 \neq I_3$ is called \textit{symmetric top}, and $I_1 \neq I_2 \neq I_3$ (for any index permutation) is called \textit{asymmetric top}.
 %   Diagonalization
+For specific techniques on diagonalization, see App \ref{sec:app-lin-alg-legendre}.
 %   Change of internal coordinates
 
 \subsection{Eulerian Angles}
