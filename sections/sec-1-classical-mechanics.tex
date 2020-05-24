@@ -471,18 +471,62 @@ More formally, the inertia tensor $\tens{I} \in S^2\wrap{\RThree} \subset \mathc
 
 \subsection{Principal Axes of Inertia}
 %   Principal Inertia axes
-The \textit{principal axes of inertia} are a basis $\{\hat{e}_i\}$ that diagonalize the inertia tensor, such that $\tens{I}_{ij}=\delta_{ij}I_i$, where the $i$th diagonal element is the $i$th moment of inertia. In this basis, the expressions for rotational kinetic energy and angular momentum are considerably simplified:
+The \textit{principal axes of inertia} are an orthonormal basis $\{\hat{e}_i\}$ that diagonalize the inertia tensor, such that $\tens{I}_{ij}=\delta_{ij}I_i$, where the $i$th diagonal element is the $i$th moment of inertia. In this basis, the expressions for rotational kinetic energy and angular momentum are considerably simplified:
 \eqn{T_\text{rot} = \half\sum_iI_i\omega_i^2,\quad\quad L_i = I_i\omega_i}
 Determining the principal axes of inertia amounts to solving the characteristic equation (eigenvalue problem) of $\norm{\wraph{\tens{I}}_{\{\hat{e}_i\}} - \lambda} = 0$. The three eigenvalues are the \textit{principal moments of inertia} and correspond to the principal axes of inertia. If the rotation takes place about one of the principal axes, then the moment of inertia is completely specified by the corresponding principal moment of inertia, such that $\vec{L} = I_i\vec{\omega} \iff \hat{e}_{\text{rot}} = \hat{e}_i$. It is often possible to determine the principal axes by examining the symmetry of the body in question. Some special cases have names: $I_1 = I_2 = I_3$ is called \textit{spherical top}, $I_1 = I_2 \neq I_3$ is called \textit{symmetric top}, and $I_1 \neq I_2 \neq I_3$ (for any index permutation) is called \textit{asymmetric top}.
 %   Diagonalization
 For specific techniques on diagonalization, see App \ref{sec:app-lin-alg-legendre}.
 %   Change of internal coordinates
+The inertia tensor can be transformed from one coordinate system $\{X_i\}$ to another $\{x_i\}$ when the two systems are separated by an offset vector $\vec{a}$ but have the same orientation. In the simplest case, the transformation law reduces to the parallel axis theorem:
+\eqn{\tens{I}_{ij} = \tens{J}_{ij} - M\wrap{a^2\delta_{ij} - a_i a_j}}
 
 \subsection{Eulerian Angles}
 % Eulerian Angles
-% Euler Equations for Rigid Body
+The transformation from the fixed system $x_i'$ to the body system $x_i$ is specified by three-parameter a rotation matrix $\vec{\lambda}$ where each parameter represents a separate angle. The \textit{Eulerian angles} $\wrap{\phi,\theta,\psi}$ which correspond to a sequence of three rotations, all counterclockwise, first about $x_3'$, then about $x_1''$, and lastly about $x_3'''$. Each step can be represented by an intermediate transformation matrix, $\vec{\lambda}_{\phi}$, $\vec{\lambda}_{\theta}$, and $\vec{\lambda}_{\psi}$ respectively, such that $\vec{\lambda} = \vec{\lambda}_{\phi}\vec{\lambda}_{\theta}\vec{\lambda}_{\psi}$:
+\eqn{
+\vec{\lambda}_{\phi} = 
+\begin{pmatrix}
+	\cos{\phi} & \sin{\phi} & 0 \\
+	-\sin{\phi} & \cos{\phi} & 0 \\
+	0 & 0 & 1
+\end{pmatrix},\quad
+\vec{\lambda}_{\theta} = 
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & \cos{\theta} & \sin{\theta} \\
+	0 & -\sin{\theta} & \cos{\theta}
 
-\subsection{Examples}
+\end{pmatrix},\quad
+\vec{\lambda}_{\psi} = 
+\begin{pmatrix}
+	\cos{\psi} & \sin{\psi} & 0 \\
+	-\sin{\psi} & \cos{\psi} & 0 \\
+	0 & 0 & 1
+\end{pmatrix}}
+\eqn{\vec{\lambda} = 
+\begin{pmatrix}
+	\cos{\psi}\cos{\phi}-\cos{\theta}\sin{\phi}\sin{\psi} & \cos{\psi}\sin{\phi}+\cos{\theta}\cos{\phi}\sin{\psi} & \sin{\psi}\sin{\theta} \\
+	-\sin{\psi}\cos{\phi}-\cos{\theta}\sin{\phi}\cos{\psi} & -\sin{\psi}\sin{\phi}+\cos{\theta}\cos{\phi}\cos{\psi} & \cos{\psi}\sin{\theta} \\
+	\sin{\theta}\sin{\phi} & -\sin{\theta}\cos{\phi} & \cos{\theta}
+\end{pmatrix}
+}
+\texfig[0.8]{cm-rigid-euler}{Diagram showing the successive rotations of Eulerian angles $\phi, \theta, \psi$.}
+\newpage
+\subsection{Equations of Motion}
+% Euler Equations for Rigid Body
+The rotation vector $\vec{\omega}$ can be represented as the time derivatives of the rotation angles $\omega_{\phi} = \dot{\phi}$, $\omega_{\theta} = \dot{\theta}$, and $\omega_{\psi} = \dot{\psi}$. Where the $\dot{\upphi}$ is along the $x_3'$-fixed axis, $\dot{\uptheta}$ is along the line of nodes, and $\dot{\uppsi}$ is along the $x_3$-body axis. The components of $\vec{\omega}$ can be expressed:
+\eqn{
+\begin{align}
+	\omega_1 &= \dot{\phi}_1 + \dot{\theta}_1 + \dot{\psi}_1 = \dot{\phi}\sin{\theta}\sin{\psi} + \dot{\theta}\cos{\psi} \\
+	\omega_2 &= \dot{\phi}_2 + \dot{\theta}_2 + \dot{\psi}_2 = \dot{\phi}\sin{\theta}\cos{\psi} - \dot{\theta}\sin{\psi} \\
+	\omega_3 &= \dot{\phi}_3 + \dot{\theta}_3 + \dot{\psi}_3 = \dot{\phi}\cos{\theta} + \dot{\psi}
+\end{align}
+}
+The Equations of motion are easier to express in the $x_i$ body frame, and using the above $\vec{\omega}$ can be summarily stated including the influence of torques $\vec{N}$.
+\eqn{\boxed{\wrap{I_i - I_j}\omega_i\omega_j - \sum_k\wrap{I_k \dot{\omega}_k - N_k}\varepsilon_{ijk} = 0}}
+% Stability
+
+\subsection{Example: Symmetric Top with a Fixed Point}
 % Symmetric Top Motion
 % Stability of Rigid Body Rotation
 

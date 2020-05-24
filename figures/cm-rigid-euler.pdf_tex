@@ -1,0 +1,90 @@
+%% Creator: Inkscape 1.1-dev (a1a64ec, 2020-05-08), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'cm-rigid-euler.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{404.88944467bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.26567267)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{cm-rigid-euler.pdf}}%
+    \put(0.17258873,0.20524715){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\phi}}$\end{tabular}}}}%
+    \put(0.16112786,0.24641273){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_3'=x_3''}$\end{tabular}}}}%
+    \put(0.28364269,0.10217917){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2'}$\end{tabular}}}}%
+    \put(0.1327929,0.07878962){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\phi}$\end{tabular}}}}%
+    \put(0.08624772,0.05002051){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1'}$\end{tabular}}}}%
+    \put(0.15984262,0.04885102){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1''}$\end{tabular}}}}%
+    \put(0.27289634,0.13609402){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2''}$\end{tabular}}}}%
+    \put(0.3903656,0.25298216){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_3'''}$\end{tabular}}}}%
+    \put(0.46049053,0.21395034){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\theta}$\end{tabular}}}}%
+    \put(0.5104133,0.24768972){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_3'=x_3''}$\end{tabular}}}}%
+    \put(0.53723112,0.03797637){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\theta}}$\end{tabular}}}}%
+    \put(0.63447984,0.1133938){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2'}$\end{tabular}}}}%
+    \put(0.61926405,0.18021099){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2'''}$\end{tabular}}}}%
+    \put(0.42741268,0.05583838){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1'}$\end{tabular}}}}%
+    \put(0.53424792,0.00556005){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1''=x_1'''}$\end{tabular}}}}%
+    \put(0.48734351,0.07816591){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\phi}$\end{tabular}}}}%
+    \put(0.87025241,0.20088306){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\phi}}$\end{tabular}}}}%
+    \put(0.98970386,0.11153501){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2'}$\end{tabular}}}}%
+    \put(0.96852726,0.1798325){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2'''}$\end{tabular}}}}%
+    \put(0.89648761,0.19152726){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_2}$\end{tabular}}}}%
+    \put(0.91117786,0.16579875){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\psi}$\end{tabular}}}}%
+    \put(0.863427,0.08346757){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\psi}$\end{tabular}}}}%
+    \put(0.81267291,0.21398119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\theta}$\end{tabular}}}}%
+    \put(0.83775383,0.07878965){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\phi}$\end{tabular}}}}%
+    \put(0.88867607,0.03996299){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\theta}}$\end{tabular}}}}%
+    \put(0.78584461,0.00862102){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1''=x_1'''}$\end{tabular}}}}%
+    \put(0.86502717,0.24812996){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_3'=x_3''}$\end{tabular}}}}%
+    \put(0.5226837,0.20275425){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\phi}}$\end{tabular}}}}%
+    \put(0.73123896,0.2514045){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_3'''=x_3}$\end{tabular}}}}%
+    \put(0.76266052,0.17515458){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\dot{\psi}}$\end{tabular}}}}%
+    \put(0.88147943,0.00628198){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{\text{Line of Nodes}}$\end{tabular}}}}%
+    \put(0.90649989,0.08487093){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eqsmall{x_1}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
