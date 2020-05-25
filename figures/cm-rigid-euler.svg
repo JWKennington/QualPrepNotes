@@ -308,11 +308,11 @@
      inkscape:window-height="1002"
      inkscape:window-width="2121"
      showgrid="false"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="94.667279"
-     inkscape:cx="172.53783"
-     inkscape:zoom="1.4"
+     inkscape:cy="77.288687"
+     inkscape:cx="436.49811"
+     inkscape:zoom="3.959798"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -464,12 +464,14 @@
        d="M 150.05654,49.133806 137.27852,31.006062"
        id="path1128-7" />
     <path
+       sodipodi:nodetypes="cc"
        id="path1166"
-       d="m 150.10354,49.192675 10.43453,8.330343"
+       d="m 150.10354,49.192675 6.35867,3.385857"
        style="fill:none;stroke:#000000;stroke-width:0.15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
+       sodipodi:nodetypes="cc"
        id="path1168"
-       d="M 150.08236,49.1143 160.41245,35.432534"
+       d="m 150.08236,49.1143 6.9224,-9.405454"
        style="fill:none;stroke:#000000;stroke-width:0.15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path1170"
@@ -576,11 +578,11 @@
        style="fill:none;stroke:#000000;stroke-width:0.15;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker2283)" />
     <path
        sodipodi:open="true"
-       d="m 110.47413,117.00019 a 9.4530411,3.1777291 0 0 1 -1.79342,0.03"
+       d="m 110.3434,115.7665 a 9.4530411,1.9272459 0 0 1 -1.33286,0.0164"
        sodipodi:arc-type="arc"
-       sodipodi:end="1.6161749"
-       sodipodi:start="1.425934"
-       sodipodi:ry="3.1777291"
+       sodipodi:end="1.5812683"
+       sodipodi:start="1.4398966"
+       sodipodi:ry="1.9272459"
        sodipodi:rx="9.4530411"
        sodipodi:cy="113.85574"
        sodipodi:cx="109.10953"
@@ -603,26 +605,357 @@
        sodipodi:open="true" />
     <text
        id="text2450"
-       y="35.680481"
-       x="52.451645"
+       y="36.148201"
+       x="53.019592"
        style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         y="35.680481"
-         x="52.451645"
+         y="36.148201"
+         x="53.019592"
          style="font-size:1.05833px;stroke-width:0.264583"
          id="tspan2448"
-         sodipodi:role="line">$\dot{\phi}$</tspan></text>
+         sodipodi:role="line">$\eqsmall{\dot{\phi}}$</tspan></text>
     <text
        id="text2454"
-       y="31.571213"
-       x="51.182117"
+       y="30.268274"
+       x="51.382568"
        style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         y="31.571213"
-         x="51.182117"
+         y="30.268274"
+         x="51.382568"
          style="font-size:1.05833px;stroke-width:0.264583"
          id="tspan2452"
-         sodipodi:role="line">$x_3'=x_3''$</tspan></text>
+         sodipodi:role="line">$\eqsmall{x_3'=x_3''}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="68.882095"
+       y="50.870018"
+       id="text2450-5"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="68.882095"
+         y="50.870018">$\eqsmall{x_2'}$</tspan></text>
+    <text
+       id="text2450-5-2"
+       y="54.210888"
+       x="47.335316"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="54.210888"
+         x="47.335316"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-6"
+         sodipodi:role="line">$\eqsmall{\phi}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="40.686989"
+       y="58.320152"
+       id="text2450-5-2-0"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-6-2"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="40.686989"
+         y="58.320152">$\eqsmall{x_1'}$</tspan></text>
+    <text
+       id="text2450-5-2-0-6"
+       y="58.487198"
+       x="51.19899"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="58.487198"
+         x="51.19899"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-6-2-1"
+         sodipodi:role="line">$\eqsmall{x_1''}$</tspan></text>
+    <text
+       id="text2450-5-0"
+       y="46.025757"
+       x="67.34713"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="46.025757"
+         x="67.34713"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9"
+         sodipodi:role="line">$\eqsmall{x_2''}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="84.125969"
+       y="29.329924"
+       id="text2450-5-0-1"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="84.125969"
+         y="29.329924">$\eqsmall{x_3'''}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="94.142334"
+       y="34.905071"
+       id="text2450-5-0-7"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-2"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="94.142334"
+         y="34.905071">$\eqsmall{\theta}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="101.2731"
+       y="30.085875"
+       id="text2454-0"><tspan
+         sodipodi:role="line"
+         id="tspan2452-0"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="101.2731"
+         y="30.085875">$\eqsmall{x_3'=x_3''}$</tspan></text>
+    <text
+       id="text2450-5-0-1-2"
+       y="60.040489"
+       x="105.10365"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="60.040489"
+         x="105.10365"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-8"
+         sodipodi:role="line">$\eqsmall{\dot{\theta}}$</tspan></text>
+    <text
+       id="text2450-5-0-1-8"
+       y="49.268166"
+       x="118.99427"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="49.268166"
+         x="118.99427"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-2"
+         sodipodi:role="line">$\eqsmall{x_2'}$</tspan></text>
+    <text
+       id="text2450-5-0-1-9"
+       y="39.724266"
+       x="116.82091"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="39.724266"
+         x="116.82091"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-1"
+         sodipodi:role="line">$\eqsmall{x_2'''}$</tspan></text>
+    <text
+       id="text2450-5-0-1-3"
+       y="57.489151"
+       x="89.417625"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="57.489151"
+         x="89.417625"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-4"
+         sodipodi:role="line">$\eqsmall{x_1'}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="104.67754"
+       y="64.670708"
+       id="text2450-5-0-1-2-4"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-8-8"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="104.67754"
+         y="64.670708">$\eqsmall{x_1''=x_1'''}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="97.977905"
+       y="54.299976"
+       id="text2450-5-2-4"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-6-8"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="97.977905"
+         y="54.299976">$\eqsmall{\phi}$</tspan></text>
+    <text
+       id="text2450-9-3"
+       y="36.771549"
+       x="152.67108"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="36.771549"
+         x="152.67108"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-5-0"
+         sodipodi:role="line">$\eqsmall{\dot{\phi}}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="169.73305"
+       y="49.533669"
+       id="text2450-5-0-1-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-2-5"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="169.73305"
+         y="49.533669">$\eqsmall{x_2'}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="166.70827"
+       y="39.778328"
+       id="text2450-5-0-1-9-9"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-1-9"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="166.70827"
+         y="39.778328">$\eqsmall{x_2'''}$</tspan></text>
+    <text
+       id="text2450-5-0-1-9-9-2"
+       y="38.107895"
+       x="156.41841"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="38.107895"
+         x="156.41841"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-1-9-3"
+         sodipodi:role="line">$\eqsmall{x_2}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="158.51671"
+       y="41.782852"
+       id="text2450-5-0-1-9-9-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-1-9-3-7"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="158.51671"
+         y="41.782852">$\eqsmall{\psi}$</tspan></text>
+    <text
+       id="text2450-5-0-1-9-9-2-8-3"
+       y="53.542709"
+       x="151.69617"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="53.542709"
+         x="151.69617"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-1-9-3-7-6"
+         sodipodi:role="line">$\eqsmall{\psi}$</tspan></text>
+    <text
+       id="text2450-5-0-7-3"
+       y="34.900665"
+       x="144.44666"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="34.900665"
+         x="144.44666"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-2-4"
+         sodipodi:role="line">$\eqsmall{\theta}$</tspan></text>
+    <text
+       id="text2450-5-2-4-5"
+       y="54.210884"
+       x="148.02911"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="54.210884"
+         x="148.02911"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-6-8-1"
+         sodipodi:role="line">$\eqsmall{\phi}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="155.30264"
+       y="59.756729"
+       id="text2450-5-0-1-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-8-9"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="155.30264"
+         y="59.756729">$\eqsmall{\dot{\theta}}$</tspan></text>
+    <text
+       id="text2450-5-0-1-2-4-0"
+       y="64.23349"
+       x="140.61461"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="64.23349"
+         x="140.61461"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2448-6-9-8-8-8-8"
+         sodipodi:role="line">$\eqsmall{x_1''=x_1'''}$</tspan></text>
+    <text
+       id="text2454-0-0"
+       y="30.022991"
+       x="151.92473"
+       style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="30.022991"
+         x="151.92473"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         id="tspan2452-0-3"
+         sodipodi:role="line">$\eqsmall{x_3'=x_3''}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="103.02576"
+       y="36.504276"
+       id="text2450-9-3-5"><tspan
+         sodipodi:role="line"
+         id="tspan2448-5-0-7"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="103.02576"
+         y="36.504276">$\eqsmall{\dot{\phi}}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="132.81496"
+       y="29.555269"
+       id="text2454-0-0-6"><tspan
+         sodipodi:role="line"
+         id="tspan2452-0-3-9"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="132.81496"
+         y="29.555269">$\eqsmall{x_3'''=x_3}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="137.30309"
+       y="40.446503"
+       id="text2450-9-3-56"><tspan
+         sodipodi:role="line"
+         id="tspan2448-5-0-8"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="137.30309"
+         y="40.446503">$\eqsmall{\dot{\psi}}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="154.2747"
+       y="64.567589"
+       id="text2450-9-3-0"><tspan
+         dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.06681738"
+         sodipodi:role="line"
+         id="tspan2448-5-0-88"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="154.2747"
+         y="64.567589">$\eqsmall{\text{Line of Nodes}}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.05833px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="157.84853"
+       y="53.342258"
+       id="text2450-5-0-1-9-9-2-0"><tspan
+         sodipodi:role="line"
+         id="tspan2448-6-9-8-1-9-3-3"
+         style="font-size:1.05833px;stroke-width:0.264583"
+         x="157.84853"
+         y="53.342258">$\eqsmall{x_1}$</tspan></text>
   </g>
   <g
      style="display:none"

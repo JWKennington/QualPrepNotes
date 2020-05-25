@@ -522,13 +522,28 @@ The rotation vector $\vec{\omega}$ can be represented as the time derivatives of
 	\omega_3 &= \dot{\phi}_3 + \dot{\theta}_3 + \dot{\psi}_3 = \dot{\phi}\cos{\theta} + \dot{\psi}
 \end{align}
 }
-The Equations of motion are easier to express in the $x_i$ body frame, and using the above $\vec{\omega}$ can be summarily stated including the influence of torques $\vec{N}$.
-\eqn{\boxed{\wrap{I_i - I_j}\omega_i\omega_j - \sum_k\wrap{I_k \dot{\omega}_k - N_k}\varepsilon_{ijk} = 0}}
+The Equations of motion are easier to express in the $x_i$ body frame, and using the above $\vec{\omega}$ can be summarily stated including the influence of torques $\vec{N}$ as in Eq. \ref{eq:cm-rigid-motion}. This can be done by identifying the Lagrangian as the rotational kinetic energy, then solving the Eq. \ref{eq:cm:lag-eqn} for $\psi$.
+\eqn[eq:cm-rigid-motion]{\boxed{\wrap{I_i - I_j}\omega_i\omega_j - \sum_k\wrap{I_k \dot{\omega}_k - N_k}\varepsilon_{ijk} = 0}}
 % Stability
+The rotations of a general rigid body with principal moments of inertia $I_3 > I_2 > I_1$ are stable about body axes $x_1$ and $x_3$, but are unstable around $x_2$. This can be derived using perturbations orthogonal to $\vec{\omega}$ and solving the Euler equations.
 
-\subsection{Example: Symmetric Top with a Fixed Point}
-% Symmetric Top Motion
-% Stability of Rigid Body Rotation
+\subsection{Example: Symmetric Top}
+% Force Free
+A symmetric top, with $I_1 = I_2 \neq I_3$, undergoing force-free motion moves with angular velocity $\vec{\omega}$. The third Euler equation gives $I_3 \dot{\omega}_3 = 0$, which implies that $\omega_3$ is constant. The other two Euler equations give a pair of coupled ODE, which have solutions of the form Eq. \ref{eq:cm-rigid-sym-top}. Note that the angular velocity $\omega$ thus traces out a circle in the $x_1$-$x_2$ plane, implying $\omega$ \textit{precesses} about the symmetry axis $x_3$ with constant angular frequency $\Omega$. The $\vec{omega}$ vector traces out a cone in the body frame, called the \textit{body cone}. 
+
+Conservation of angular momentum also tells that $T_{\text{rot}} = \half\vec{\omega}\cdot\vec{L}=\text{constant}$, which implies that $\vec{\omega}$ also precesses about $\vec{L}$ such that the projection $\vec{\omega}\cdot\vec{L}$ remains constant. Thus, $\vec{\omega}$ also traces out a cone in the fixed frame, called the \textit{space cone}. The body cone rolls around the space cone.
+\eqn[eq:cm-rigid-sym-top]{
+\begin{split}
+	\omega_1 &= A\cos{\Omega t}\\ 
+	\omega_2 &= A\sin{\Omega t}
+\end{split}
+\quad\quad \mathrm{where}\ \Omega = \frac{I_3 - I_1}{I_1}\omega_3 
+}
+% Point fixed
+If we consider the same top rotating about a fixed point in a gravitational field, the motion is different. Observing the Lagrangian (Eq. \ref{eq:cm-rigid-top-lag}), the conjugate momenta $p_{\phi}$ and $p_{\psi}$ are conserved. Energy is also constant, since all forces are conservative. The quantity $E'$ is also conserved, and gives the effective potential $V(\theta)$. Solving for $\phi(t)$, $\theta(t)$, $\psi(t)$ shows \textit{nutation} behavior, in that $\theta$ is bounded between a minimum and maximum while $\phi$ and $\psi$ move constantly. The effect is precession of $x_3$ about $x_3'$, with oscillation of the angle between them.
+\eqn[eq:cm-rigid-top-lag]{\Lag = \half I_1 \wrap{\dot{\phi}^2\sin^2\theta + \dot{\theta}^2} + \half I_3 \wrap{\dot{\phi}\cos\theta + \dot{\psi}}^2 - Mgh\cos\theta}
+\eqn{E' = \half I_1 \dot{\theta}^2 + V(\theta)\where V(\theta)=\frac{\wrap{p_{\phi} - p_{\psi}\cos\theta}^2}{2I_1 \sin^2\theta} + Mgh\cos\theta}
+
 
 
 
