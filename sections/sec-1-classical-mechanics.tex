@@ -515,13 +515,12 @@ The transformation from the fixed system $x_i'$ to the body system $x_i$ is spec
 \subsection{Equations of Motion}
 % Euler Equations for Rigid Body
 The rotation vector $\vec{\omega}$ can be represented as the time derivatives of the rotation angles $\omega_{\phi} = \dot{\phi}$, $\omega_{\theta} = \dot{\theta}$, and $\omega_{\psi} = \dot{\psi}$. Where the $\dot{\upphi}$ is along the $x_3'$-fixed axis, $\dot{\uptheta}$ is along the line of nodes, and $\dot{\uppsi}$ is along the $x_3$-body axis. The components of $\vec{\omega}$ can be expressed:
-\eqn{
 \begin{align}
 	\omega_1 &= \dot{\phi}_1 + \dot{\theta}_1 + \dot{\psi}_1 = \dot{\phi}\sin{\theta}\sin{\psi} + \dot{\theta}\cos{\psi} \\
 	\omega_2 &= \dot{\phi}_2 + \dot{\theta}_2 + \dot{\psi}_2 = \dot{\phi}\sin{\theta}\cos{\psi} - \dot{\theta}\sin{\psi} \\
 	\omega_3 &= \dot{\phi}_3 + \dot{\theta}_3 + \dot{\psi}_3 = \dot{\phi}\cos{\theta} + \dot{\psi}
 \end{align}
-}
+
 The Equations of motion are easier to express in the $x_i$ body frame, and using the above $\vec{\omega}$ can be summarily stated including the influence of torques $\vec{N}$ as in Eq. \ref{eq:cm-rigid-motion}. This can be done by identifying the Lagrangian as the rotational kinetic energy, then solving the Eq. \ref{eq:cm:lag-eqn} for $\psi$.
 \eqn[eq:cm-rigid-motion]{\boxed{\wrap{I_i - I_j}\omega_i\omega_j - \sum_k\wrap{I_k \dot{\omega}_k - N_k}\varepsilon_{ijk} = 0}}
 % Stability
@@ -558,6 +557,8 @@ When multiple oscillators can exchange energy, they are said to be \textit{coupl
 
 % Two Coupled Oscillators
 \subsection{Two Coupled Oscillator}
+
+\texfig[0.95]{cm-coupled-setup}{A system of two coupled oscillators at equilibrium and oscillating at the two normal modes $\omega_1$ and $\omega_2$.}
 
 % General-coupled oscillators - Eigenmodes/degeneracy
 \subsection{General Coupled Oscillators}
