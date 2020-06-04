@@ -557,8 +557,8 @@ When multiple oscillators can exchange energy, they are said to be \textit{coupl
 
 % Two Coupled Oscillators
 \subsection{Two Coupled Oscillators}
-The simplest example is two spring oscillators with coefficient $\kappa$ connected by a spring with a different spring constant $\kappa_{12}$, illustrated in Fig. \ref{fig:cm-coupled-setup}.
-\eqn{\begin{split}
+The simplest example is two spring oscillators with coefficient $\kappa$ connected by a spring with a different spring constant $\kappa_{12}$, illustrated in Fig. \ref{fig:cm-coupled-setup}. The equations of motion can be written in terms of the conventional coordinates $x_1$ and $x_2$, as in Eq. \ref{eq:cm-coupled-conv}. Solving the equations gives two frequencies $\omega_1$, $\omega_2$ and four unknown constants $B_1^+$, $B_1^-$, $B_2^+$, $B_2^-$. The characteristic frequency $\omega_0$ describes motion in which one oscillator is fixed.
+\eqn[eq:cm-coupled-conv]{\begin{split}
 	M\ddot{x}_1 + \wrap{\kappa + \kappa_{12}}x_1 - \kappa_{12}x_2 &= 0\\
 	M\ddot{x}_2 + \wrap{\kappa + \kappa_{12}x_2} - \kappa_{12}x_1 &= 0
 \end{split}\quad\quad
@@ -566,15 +566,13 @@ The simplest example is two spring oscillators with coefficient $\kappa$ connect
 	x_1(t) &=\ \ B_1^+e^{i\omega_1 t} + B_1^- e^{-i\omega_1 t} + B_2^+ e^{i\omega_2 t} + B_2^- e^{-i\omega_2 t} \\
 	x_2(t) &= -B_1^+e^{i\omega_1 t} - B_1^- e^{-i\omega_1 t} + B_2^+ e^{i\omega_2 t} + B_2^- e^{-i\omega_2 t}
 \end{split}}
-
 \eqn{\omega=\sqrt{\frac{\kappa +\kappa_{12} \pm \kappa_{12}}{M}}\quad\quad
 	 \omega_1 = \sqrt{\frac{\kappa +2\kappa_{12}}{M}}\quad\quad
 	 \omega_2=\sqrt{\frac{\kappa}{M}}\quad\quad
 	 \omega_0=\sqrt{\frac{\kappa + \kappa_{12}}{M}}}
-
-\texfig[0.95]{cm-coupled-setup}{A system of two coupled oscillators at equilibrium and oscillating at the two normal modes $\omega_1$ and $\omega_2$.}
+\texfig[0.95]{cm-coupled-setup}{A system of two coupled oscillators at equilibrium and oscillating at the two normal modes $\omega_1$ and $\omega_2$.}\\
 % Normal coordinates for this system
-\noindent Normal coordinates for the system can be found
+\noindent Normal coordinates $\eta_1$, $\eta_2$ for the system can be found that simplify both the equations of motion and the solutions. The procedure for finding such coordinates will be detailed later. Note that coupling splits the natural frequency $\omega_0$ into a higher frequency $\omega_1$ and a lower frequency $\omega_2$ corresponding to \textit{antisymmetrical} and \textit{symmetrical} motion respectively. In general, modes with higher degrees of symmetry have lower frequencies, and coupling splits natural frequencies.
 \eqn{\begin{split}
 	\eta_1 &\equiv x_1 - x_2\\
 	\eta &\equiv x_1 + x_2
@@ -587,10 +585,8 @@ The simplest example is two spring oscillators with coefficient $\kappa$ connect
 	\eta_1(t) &= C_1^+ e^{i\omega_1 t} + C_1^- e^{-i\omega_1 t} \\
 	\eta_2(t) &= C_2^+ e^{i\omega_2 t} + C_2^- e^{-i\omega_2 t}
 \end{split}}
-% frequency splitting
-Note that the effect of the ... is to split the natural frequency
 % weak coupling
-In the weak coupling limit
+In the weak coupling limit, $\kappa_{12} << \kappa$, the motion may be further simplified in terms of a coupling coefficient $\varepsilon$. The weak coupling motion resembles a higher frequency wave modulated in a lower frequency envelope, since $D\cos\varepsilon\omega_0 t$ and $D\sin\varepsilon\omega_0 t$ vary slowly with time for small $\varepsilon$.
 \eqn{\begin{split}
 	x_1(t) &= \wrap{D\cos{\varepsilon\omega_0 t}}\cos{\omega_0 t} \\
 	x_2(t) &= \wrap{D\sin{\varepsilon\omega_0 t}}\sin{\omega_0 t}
