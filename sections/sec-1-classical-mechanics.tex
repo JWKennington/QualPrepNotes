@@ -599,9 +599,29 @@ In the weak coupling limit, $\kappa_{12} << \kappa$, the motion may be further s
 
 % General-coupled oscillators - Eigenmodes/degeneracy
 \subsection{General Coupled Oscillators}
-
+In the general case of $n$ coupled oscillators, let $q_k$ be the generalized coordinates that describe the system lagrangian $\Lag$. In equilibrium, we have $q_k=q_{k0}$, $\dot{q}_k=0$, $\ddot{q}_k=0$ for $k=1,2,...,n$. 
+\eqn{T=\half\sum_{j,k}m_{jk}\dot{q}_j\dot{q}_k\quad\quad U=\half\sum_{j,k}A_{jk}q_j q_k\quad\quad A_{jk}=A_{kj}=\frac{\p^2 U}{\p q_j \p q_k}\bigg\rvert_0}
+The equations of motion can be written in terms of the generalized coordinates. Assuming oscillatory motion, solutions of the form $q_j (t)= a_j e^{i\wrap{\omega t - \delta}}$ produces the second equation below, which can be solved via the characteristic equation. 
+\eqn{\sum_j\wrap{A_{jk}q_j + m_{jk}\ddot{q}_j}=0\quad\quad \sum_j\wrap{A_{jk}-\omega^2 m_{jk}}a_j=0\quad\quad \norm{A_{jk} - \omega^2 m_{ij}}=0}
+In general there are $n$ roots, denoted $\omega^2_r$, where $\omega_r$ is the $r$-th \textit{eigenfrequency} of the system which corresponds to the $r$-th \textit{eigenvector} $\vec{a}_r$. If $\omega_r=\omega_s$ for $r\neq s$, then the solutions are \textit{degenerate}. Solving the characteristic equation gives solutions in terms of the $j$-th component of the $\vec{a}_r$, where the latter equality assumes only the \textit{real} components of the solutions are physically meaningful.
+\eqn{q_j(t)=\sum_r a_{jr} e^{i\wrap{\omega_r t - \delta_r}}=\sum_r a_{jr}\cos\wrap{\omega_r t - \delta_r}}
+Applying this technique to the problem of two oscillators solved above, we note that the kinetic and potential energy may be written in terms of the conventional coordinates. The characteristic equation and the solutions agree with the method above:
+\eqn{U=\half\wrap{\kappa + \kappa_{12}}\wrap{x_1^2 + x_2^2} - \kappa_{12}x_1 x_2\quad\quad T = \half M\wrap{\dot{x}_1^2 + \dot{x}_2^2}}
+\eqn{A_{11}=\frac{\p^2 U}{\p x_1^2}\bigg\rvert_0=\kappa + \kappa_{12}\quad\quad
+A_{12}=A_{21}=\frac{\p^2 U}{\p x_1\p x_2}\bigg\rvert_0=-\kappa_{12}\quad\quad
+A_{22}=\frac{\p^2 U}{\p x_2^2}\bigg\rvert_0=\kappa + \kappa_{12}
+}
+\eqn{m_{11}=m_{22}=M\quad\quad m_{12}=m_{21}=0}
+\eqn{\begin{vmatrix}
+\kappa + \kappa_{12} - M\omega^2 & -\kappa_{12} \\
+-\kappa_{12} & \kappa + \kappa_{12} - M\omega^2
+\end{vmatrix}=0 \implies \omega=\sqrt{\frac{\kappa + \kappa_{12} \pm \kappa_{12}}{M}}}
 % Normal Coordinates
 \subsection{Normal Coordinates}
+Note that since $A_{jk}$ and $m_{jk}$ are not diagonal in general, then the $q_k$ are not normal coordinates. To find normal coordinates, being by normalizing the orthogonal set of eigenvectors $\vec{a}_r$ and introducing a new scaling constant (complex) $\beta_r$ defined in terms of a real scale constant $\alpha_r$ and phases $\delta_r$. 
+\eqn{q_j(t)=\sum_r \beta_r e^{i\omega_r t}\quad\quad\quad \beta_r = \alpha_r e^{i\delta_r}}
+Normal coordinates $\eta_r$ may then be defined simply by making the $q_j$ a sum of quantities that undergo oscillation at only one frequency, such that $\ddot{\eta}_r + \omega_r^2 \eta_r = 0$. Again, these coordinates correspond to the \textit{normal modes} or excitiation frequencies $\omega_r$.
+\eqn{\boxed[2\fboxsep]{\eta_r(t)\equiv \beta_r e^{i\omega_r t}\quad\quad q_j(t)=\sum_r a_{jr}\eta_r(t)}}
 
 % Molecular Vibrations - READ ONLY / SKIP
 % Degeneracy - example 3 linearly coupled plane pendula
