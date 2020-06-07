@@ -626,13 +626,16 @@ Normal coordinates $\eta_r$ may then be defined simply by making the $q_j$ a sum
 % Molecular Vibrations - READ ONLY / SKIP
 % Degeneracy - example 3 linearly coupled plane pendula
 \subsection{Degeneracy}
-Degeneracy example
-\texfig[0.6]{cm-coupled-degen}{Caption.}
+As depicted below, a triple pendulum system is a simple example of degeneracy. Coupling occurs due to the non-rigid nature of the support, allowing energy to be transferred from one pendulum to another. Using natural units ($M=l=g=1$), then $T=\half\wrap{\dot{\theta}_1^2 + \dot{\theta}_2^2 + \dot{\theta}_3^2}$ $U=\half\wrap{\theta_1^2+\theta_2^2+\theta_3^2 -2\varepsilon\theta_1\theta_2 -2\varepsilon\theta_1\theta_3 -2\varepsilon\theta_2\theta_3}$. The above technique gives $m_{ij}=\delta_{ij}$ and $A_{ii}=1$, $A_{i\neq j}=-\varepsilon$, which implies $\omega_1=\omega_2=\sqrt{1+\varepsilon}$, $\omega_3=\sqrt{1-2\varepsilon}$. Since $\omega_1=\omega_2$ there is degeneracy.
+\texfig[0.6]{cm-coupled-degen}{A system of three pendula suspended from a slightly yielding support.}
 
 % Loaded String
 \subsection{Loaded String}
-Loaded string discrete
-\texfig[0.9]{cm-coupled-loaded}{Caption.}
+A string can be approximated by a set of $n$ identical masses placed evenly along an a spring. Using small displacement assumptions, the restoring force $F_j=-\frac{\tau}{d}\wrap{q_j - q_{j-1}}-\frac{\tau}{d}\wrap{q_{j+1} - q_j}$, where $\tau$ is the tension in the string. Using either Newtonian or Lagrangian formalism, the equation of motion for the $j$-th mass is $m\ddot{q}_j-\frac{\tau}{d}\wrap{q_{j-1}-2q_j+q_{j+1}}=0$. Using the above method to solve for solutions of the form $q_j=\sum_r \beta_r' a_{jr} e^{i\omega_r t}$ gives:
+\eqn{q_j(t)=\sum_r \wrap{j\frac{r\pi}{n+1}}\wrap{\mu_r \cos \omega_r t - \nu_r\sin \omega_r t}\where[1] \omega_r= 2\sqrt{\frac{\tau}{md}} \sin \wrap{\frac{r\pi}{2\wrap{n+1}}}}
+\eqn{\mu_r=\frac{2}{n+1}\sum_j q_j(0)\sin\wrap{j\frac{r\pi}{n+1}}\quad\quad 
+\nu_r=-\frac{2}{\omega_r\wrap{n+1}}\sum_j\dot{q}(0)\sin\wrap{j\frac{r\pi}{n+1}}}
+\texfig[0.6]{cm-coupled-loaded}{Schematic diagram of loaded string.}
 
 
 
@@ -643,6 +646,10 @@ Loaded string discrete
 \newpage
 \section{Continuous Systems}
 \label{sec:cm-continuous}
+\subsection{Continuous String}
+\subsection{Wave Equation}
+\subsection{Phase Velocity}
+\subsection{Group Velocity}
 
 % Wave Equation
 % Group velocity and dispersion relations
