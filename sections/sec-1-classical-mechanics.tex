@@ -599,7 +599,7 @@ In the weak coupling limit, $\kappa_{12} << \kappa$, the motion may be further s
 
 % General-coupled oscillators - Eigenmodes/degeneracy
 \subsection{General Coupled Oscillators}
-In the general case of $n$ coupled oscillators, let $q_k$ be the generalized coordinates that describe the system lagrangian $\Lag$. In equilibrium, we have $q_k=q_{k0}$, $\dot{q}_k=0$, $\ddot{q}_k=0$ for $k=1,2,...,n$. 
+In the general case of $n$ coupled oscillators, let $q_k$ be the generalized coordinates that describe the system Lagrangian $\Lag$. In equilibrium, we have $q_k=q_{k0}$, $\dot{q}_k=0$, $\ddot{q}_k=0$ for $k=1,2,...,n$. 
 \eqn{T=\half\sum_{j,k}m_{jk}\dot{q}_j\dot{q}_k\quad\quad U=\half\sum_{j,k}A_{jk}q_j q_k\quad\quad A_{jk}=A_{kj}=\frac{\p^2 U}{\p q_j \p q_k}\bigg\rvert_0}
 The equations of motion can be written in terms of the generalized coordinates. Assuming oscillatory motion, solutions of the form $q_j (t)= a_j e^{i\wrap{\omega t - \delta}}$ produces the second equation below, which can be solved via the characteristic equation. 
 \eqn{\sum_j\wrap{A_{jk}q_j + m_{jk}\ddot{q}_j}=0\quad\quad \sum_j\wrap{A_{jk}-\omega^2 m_{jk}}a_j=0\quad\quad \norm{A_{jk} - \omega^2 m_{ij}}=0}
@@ -620,7 +620,7 @@ A_{22}=\frac{\p^2 U}{\p x_2^2}\bigg\rvert_0=\kappa + \kappa_{12}
 \subsection{Normal Coordinates}
 Note that since $A_{jk}$ and $m_{jk}$ are not diagonal in general, then the $q_k$ are not normal coordinates. To find normal coordinates, being by normalizing the orthogonal set of eigenvectors $\vec{a}_r$ and introducing a new scaling constant (complex) $\beta_r$ defined in terms of a real scale constant $\alpha_r$ and phases $\delta_r$. 
 \eqn{q_j(t)=\sum_r \beta_r e^{i\omega_r t}\quad\quad\quad \beta_r = \alpha_r e^{i\delta_r}}
-Normal coordinates $\eta_r$ may then be defined simply by making the $q_j$ a sum of quantities that undergo oscillation at only one frequency, such that $\ddot{\eta}_r + \omega_r^2 \eta_r = 0$. Again, these coordinates correspond to the \textit{normal modes} or excitiation frequencies $\omega_r$.
+Normal coordinates $\eta_r$ may then be defined simply by making the $q_j$ a sum of quantities that undergo oscillation at only one frequency, such that $\ddot{\eta}_r + \omega_r^2 \eta_r = 0$. Again, these coordinates correspond to the \textit{normal modes} or excitation frequencies $\omega_r$.
 \eqn{\boxed[2\fboxsep]{\eta_r(t)\equiv \beta_r e^{i\omega_r t}\quad\quad q_j(t)=\sum_r a_{jr}\eta_r(t)}}
 
 % Molecular Vibrations - READ ONLY / SKIP
@@ -638,21 +638,41 @@ A string can be approximated by a set of $n$ identical masses placed evenly alon
 \texfig[0.6]{cm-coupled-loaded}{Schematic diagram of loaded string.}
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          CONTINUOUS SYSTEMS           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Continuous Systems}
 \label{sec:cm-continuous}
+We now consider bodies whose constituent particles \textit{can} move with respect to one another. Such \textit{continuous} bodies have the important ability to propagate waves. Consequently, we here study wave features and boundary value problems in general.
+
+% Continuous String
 \subsection{Continuous String}
-\subsection{Wave Equation}
-\subsection{Phase Velocity}
-\subsection{Group Velocity}
+The simplest example of a continuous body is a continuous string, which can be viewed as a limit of the discrete loaded string above, in which $d \to 0$ such that $m/d \to \rho$. It should also be clear that $n \to \infty$ such that $(n+1)d=L$, where $L$ is the length of the string. Since $n\to\infty$, there is an infinite number of normal modes, so the sum becomes like a Fourier series:
+\eqn{q(x, t)=\sum_r \eta_r(t) \sin \wrap{\frac{r\pi x}{L}}\where[1] j\frac{r\pi}{\wrap{n+1}}=r\pi\frac{jd}{\wrap{n+1}d}=r\pi\frac{x}{L}}
+Since $\eta_r(t)=\beta_r e^{i\omega_r t}$ and $\beta_r = \mu_r + i\nu_r$, we can solve for these constants using initial conditions, as we do for other Fourier series, using the orthogonality cond: $\int_0^L\sin(r\pi x/L)\sin(s\pi x/L)dx=\delta_{rs}$. The characteristic frequency $\omega_r$ can be solved as the limit $d\to 0$ of the discrete string.
+\eqn{q(x,0)=\sum_r \mu_r \sin\wrap{\frac{r\pi x}{L}}\quad\quad \dot{q}(x,0)=-\sum_r \omega_r\nu_r \sin\wrap{\frac{r\pi x}{L}} \quad\quad \omega_r=\frac{r\pi}{L}\sqrt{\frac{\tau}{\rho}}}
+\eqn{\mu_r=\frac{2}{L}\int_0^L q(x, 0)\sin\wrap{\frac{r\pi x}{L}}dx\quad\quad \mu_r=\frac{2}{L}\int_0^L q(x, 0)\sin\wrap{\frac{r\pi x}{L}}dx}
+The energy of the vibrating string can be computed by integrating the energies of a unit length. Since we have assumed no friction, $E$ will be constant in time, and $\wrapa{T}=\wrapa{U}$.
+\eqn{T = \half\rho\int_0^L \wrap{\pd{q}{t}}^2 dx=\frac{\rho L}{4}\sum_r \dot{\eta}_r^2=\frac{\rho L}{4}\sum_r \omega_r^2 \wrap{\mu_r\sin\omega_r t + \nu_r\cos \omega_r t}^2}
+\eqn{U = \half\tau\int_0^L \wrap{\pd{q}{x}}^2 dx=\frac{\rho L}{4}\sum_r \omega_r^2 \eta_r^2=\frac{\rho L}{4}\sum_r \omega_r^2 \wrap{\mu_r\cos\omega_r t - \nu_r\sin \omega_r t}^2}
+\eqn{E = T + U = \frac{\rho L}{4}\sum_r \omega_r^2 \wrap{\mu_r^2 + \nu_r^2}=\frac{\rho L}{4}\sum_r \omega_r \norm{\beta_r}^2}
+From the above it is possible to derive the one-dimensional wave equation (and vice-versa). Recall the discrete equation of motion, $\frac{m}{d}\ddot{q}=\frac{\tau}{d}\wrap{q_{j-1} - q_j}-\frac{\tau}{d}\wrap{q_{j+1} - q_j}$, and take limit as $d \to 0$:
+\eqn{\frac{q_j - q_{j+1}}{d}\to\frac{q(x) - q(x+d)}{d}\to -\pd{q}{x}\bigg\rvert_{x+d/2}\quad\quad \text{similarly}\quad\quad \frac{q_{j-1} - q_j}{d}\to-\pd{q}{x}\bigg\rvert_{x-d/2}}
+\eqn{\lim_{d\to0}\tau\wrap{\frac{\pd{q}{x}\rvert_{x+d/2} - \pd{q}{x}\rvert_{x-d/2}}{d}}=\tau\pd[2]{q}{x}\bigg\rvert_{x}=\tau\pd[2]{q}{x}}
+\eqn{\boxed{\pd[2]{q}{x}=\frac{\rho}{\tau}\pd[2]{q}{t}}}
 
 % Wave Equation
-% Group velocity and dispersion relations
+\subsection{Wave Equation}
+Wave Equation
+
+% Phase Velocity
+\subsection{Phase Velocity}
+Phase Velocity
+
+% Group Velocity
+\subsection{Group Velocity}
+Group Velocity
 
 
 \eqn{x}
