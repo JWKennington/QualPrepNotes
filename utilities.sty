@@ -74,12 +74,13 @@
 \newcommand{\wrap}[1]{\left(#1\right)}
 \newcommand{\wrapc}[1]{\left\{#1\right\}}
 \newcommand{\wraph}[1]{\left[#1\right]}
+\newcommand{\wrapa}[1]{\langle#1\rangle}
 
 % Define a new command for the norm of a vector
 \newcommand{\norm}[1]{\left\lvert#1\right\rvert}
 
 % Define a new command for taking partial derivatives
-\newcommand{\pd}[2]{\frac{\p #1}{\p #2}}
+\newcommand{\pd}[3][1]{\ifthenelse{\equal{#1}{1}}{\frac{\p #2}{\p #3}}{\frac{\p^{#1} #2}{\p #3^{#1}}}}
 
 
 % Define a new command for "quote box"
