@@ -664,16 +664,28 @@ From the above it is possible to derive the one-dimensional wave equation (and v
 
 % Wave Equation
 \subsection{Wave Equation}
-Wave Equation
+The general wave equation for a \textit{wave function} $\Psi$ is stated in Eq. \ref{eq:cm-cont-wave}. Using a transform of variables $\xi\equiv x + vt$, $\eta\equiv x - vt$ the wave function can be shown to be a superposition of forward and backward propagating waves $\Psi = f(\xi) + g(\eta)$. 
+\eqn[eq:cm-cont-wave]{\pd[2]{\Psi}{x} - \frac{1}{\nu^2}\pd[2]{\Psi}{t}\quad\quad
+\Psi(x,t)=\psi(x)e^{i\omega t}}
+Using a separation of variables such that $\Psi(x,t)=\psi(x)\cdot\chi(t)$, the resulting separate ODE equations become $\psi_{xx} + \wrap{\omega^2/\nu^2}\psi=0$ and $\chi_{tt}+\omega^2\chi=0$, which possess the familiar solutions given below
+\eqn{\psi(x)=Ae^{i\wrap{\omega/\nu}x} + Be^{i\wrap{\omega/\nu}x}\quad\quad 
+\chi(t)=Ce^{i\omega t} + D e^{-i\omega t}}
+The one-dimensional version of this equation is referred to as the \textit{Helmholtz} equation with a coefficient called the \textit{wavenumber} $k$:
+\eqn{\frac{d^2\psi}{dx^2}+k^2\psi=0 \quad\quad
+	k\equiv\frac{\omega}{\nu}=\frac{2\pi}{\lambda}}
 
 % Phase Velocity
 \subsection{Phase Velocity}
-Phase Velocity
+Considering solutions of the form $\Psi(x,t)=Ae^{i\wrap{\omega t - kx}}$, which represent a single-frequency waveform traveling to the right, the \textit{phase velocity} $V$ corresponds to the velocity with which the wave form propagates. The \textit{phase} of the wave $\phi=\omega t - kx$. The velocity can be computed assuming $d\phi=0$.
+\eqn{V=\frac{dx}{dt}=\frac{\omega}{k}}
+When $V=V(k)$, the corresponding function $\omega(k)$ is called the \textit{dispersion relation}. For example, a vibrating string exhibits dispersion:
+\eqn{V=\frac{\omega}{k}=\sqrt{\frac{\tau d}{m}}\frac{\norm{\sin\wrap{kd/2}}}{kd/2}\quad\quad
+V\wrap{\lambda \to \infty}=\sqrt{\frac{\tau d}{m}} = \sqrt{\frac{\tau}{\rho}}}
 
 % Group Velocity
 \subsection{Group Velocity}
-Group Velocity
-
-
-\eqn{x}
-
+When multiple single-frequency waves are propagating together, the combined waveform travels with a speed called the \textit{group velocity} $U$, which can be computed by:
+\eqn{U=\frac{dx}{dt}\approx\frac{d\omega}{dk}}
+The group velocity is only applied to cases that can be represented as a \textit{wave packet}, Eq. \ref{eq:cm-cont-packet}.
+\eqn[eq:cm-cont-packet]{\Psi(x,t)=\int_{k_0-\Delta k}^{k_0+\Delta k}A(k)e^{i\wrap{\omega t - kx}}dk}
+It's worth noting that since information is transmitted by forming a wave packet, the group velocity, not the phase velocity, corresponds to the speed at which a signal is transmitted.
