@@ -4,24 +4,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Special Relativity}
 \label{sec:specrel}
-The special relativity subject matter in the qualifying exam is primarily at the level of \cite{ohanianModernPhysics1995}, a common, upper-level undergraduate relativity text.
-
+The special relativity subject matter in the qualifying exam is primarily at the level of \cite{ohanianModernPhysics1995}, a common, upper-level undergraduate modern physics text. The main innovation in special relativity is Einstein's second postulate:
+\quotebox{
+\begin{enumerate}[label=\Roman*.]
+	\item Only the relative motion of inertial frames can be measured; the laws of physics are the same in all inertial reference frames. The concept of "absolute rest" is meaningless.
+	\item The velocity of light is a universal constant, independent of any relative motion of the source and observer
+\end{enumerate}}
 
 \section{Lorentz Invariance}
 % Galilean Invariance
+Newtonian mechanics, which underlies all of classical mechanics, assumes a universal background space and time, such that the time is shared by all inertial reference frames. Thus a transformation from one Newtonian frame $K$ to another $K'$, separated by velocity $v$ in the $x_1$ dimension, called a \textit{Galilean} transformation takes the form $x_1'=x_1-vt$, $x_2'=x_2$, $x_3'=x_3$, $t'=t$. The fact that Newtonian mechanics is invariant under these transformations is called \textit{Galilean invariance}.\\
 % Lorentz Transforms
+\indent Galilean invariance isn't compatible with the second postulate of special relativity, so the symmetries of spacetime in special relativity must be different. The \textit{Lorentz transformation} can be derived from the second postulate. Keeping the speed of light $c$ constant, and computing the distance traveled by a pulse of light in two frames, $K$ and $K'$ separated by a boost of speed $v$ on the $x_1$-axis the resulting transformation is defined:
+\eqn{\begin{split}
+	x_1' &= \gamma\wrap{x_1 - vt} \\
+	x_2' &= x_2 \\
+	x_3' &= x_3 \\
+	t' &= \gamma\wrap{t - x_1}
+\end{split}\ \Vast{\}}
+	\quad\quad\quad\quad
+\gamma=\frac{1}{\sqrt{1-\wrap{\frac{v}{c}}^2}}
+}
 % Lorentz Group (boosts + rotations)
-\section{Space-Time and Four-Vectors}
-% 4-vectors
-% Metric, Causality
-\section{Momentum and Energy}
-\section{Relativistic Effects}
-% Doppler
-% Length Contraction
-% Time Dilation (+ Twin Paradox)
-\section{Relativistic Kinematics}
-% Lagrangian
-% Collisions
-\section{Experimental Verification}
-% Muon decay
-% Atomic clock
+Any physical system preserved under Lorentz transformations is said to be \textit{Lorentz invariant}. Maxwell's equations of electrodynamics possess Lorentz invariance, and were a major source of motivation for the development of special relativity.
+
