@@ -51,3 +51,10 @@ At this point it's worth noting that Lorentz transformations $\Lambda$ are those
 For the case of lightlike separation, we define the \textit{proper time} $\Delta \tau$ to be the negative of the interval such that $\Delta \tau = - \Delta s$. For a parametric path $x^\mu(\lambda)$ in spacetime such that the velocity is timelike at every point, the proper time defines the time experienced by an observer moving along the path:
 \eqn{\tau=\int_{\lambda_0}^{\lambda_1}\sqrt{-\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}d\lambda}
 
+
+\section{Momentum and Energy}
+In special relativity, we extend the relativistic 3-dimensional velocity $\vec{p}=\gamma m \vec{v}$ to be a four-vector, called the \textit{four momentum} $p^\mu$ by adding the \textit{relativistic energy} $E=\gamma mc^2$ as the time coordinate such that $p^\mu=\wrap{E/c, \vec{p}}$. The four-momentum is conserved, as is the relativistic momentum $\vec{p}$. The total energy $E=p^0 c$ is conserved as well. The kinetic energy can be defined:
+\eqn{p^\mu = \wrap{\gamma mc, \gamma m v_x, \gamma m v_y, \gamma m v_z}}
+\eqn{T=\sqrt{p^2 c^2 + m^2 c^4} - mc^2 = E - mc^2 = \wrap{\gamma - 1}mc^2}
+Note that for $v << c$ the classical, Newtonian expressions are recovered for both momentum and kinetic energy. Using the expansion for $1/\sqrt{1-x^2}\approx 1 + x^2/2$, the Lorentz coefficient $\gamma$ can be expanded to $\gamma \approx 1 + v^2/2c^2$, therefore $E\approx mc^2 + mv^2/2$ and $p\approx mv$.
+
