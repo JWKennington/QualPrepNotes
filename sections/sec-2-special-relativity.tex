@@ -28,3 +28,26 @@ Newtonian mechanics, which underlies all of classical mechanics, assumes a unive
 % Lorentz Group (boosts + rotations)
 Any physical system preserved under Lorentz transformations is said to be \textit{Lorentz invariant}. Maxwell's equations of electrodynamics possess Lorentz invariance, and were a major source of motivation for the development of special relativity.
 
+
+\section{Space-Time and Four-Vectors}
+% 4-vectors
+Since special relativity deals with transformations in 4-dimensional spacetime, it is helpful to introduce the concept more formally. We adopt the concept of \textit{four-vectors}, such as $x^\mu$ to represent a point in spacetime, where $x^0=ct$, $x^1=x$, $x^2=y$, $x^3=z$. We also define the square of the spacetime interval between two points to be an invariant:
+\eqn{\Delta s^2 = -\wrap{c\Delta t}^2 + \wrap{\Delta x}^2 + \wrap{\Delta y}^2 + \wrap{\Delta z}^2}
+We can also define the invariant in terms of the \textit{Minkowski metric} $\eta_{\mu\nu}$ which defines a flat Lorentzian manifold. Further, we adopt the \textit{Einstein summation notation} whereby the $\sum$ symbol is omitted in favor of matching a lower and upper index. For instance, computing the invariant interval for two points $x^\mu$ and $x'^\mu$, where $\Delta x^\mu = \wrap{x^0-x'^0, x^1-x'^1, x^2-x'^2, x^3-x'^3}$.
+\eqn{\eta_{\mu\nu}=\begin{pmatrix}
+	-1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 
+\end{pmatrix}\quad\quad\quad
+\Delta s^2=\eta_{\mu\nu}\wrap{\Delta x}^\mu\wrap{\Delta x}^\nu}
+% Metric, Causality
+At this point it's worth noting that Lorentz transformations $\Lambda$ are those that leave the metric unchanged $\Lambda \eta \Lambda^{T}$, which implies that $\Lambda^T = \Lambda^{-1}$ or that the Lorentz transformations are \textit{orthogonal}. We define causal relationships between two points $x^\mu$ and $x'^\mu$ in the following way:
+\eqn{\begin{align}
+	\Delta s^2 &< 0\quad \text{\textit{timelike}, possible causal dependence} \\
+	\Delta s^2 &= 0\quad \text{\textit{lightlike}, boundary between causal dependence and independence} \\
+	\Delta s^2 &> 0\quad \text{\textit{spacelike}, causal independence} \\
+\end{align}}
+For the case of lightlike separation, we define the \textit{proper time} $\Delta \tau$ to be the negative of the interval such that $\Delta \tau = - \Delta s$. For a parametric path $x^\mu(\lambda)$ in spacetime such that the velocity is timelike at every point, the proper time defines the time experienced by an observer moving along the path:
+\eqn{\tau=\int_{\lambda_0}^{\lambda_1}\sqrt{-\eta_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}d\lambda}
+
