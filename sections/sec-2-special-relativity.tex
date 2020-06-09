@@ -58,3 +58,34 @@ In special relativity, we extend the relativistic 3-dimensional velocity $\vec{p
 \eqn{T=\sqrt{p^2 c^2 + m^2 c^4} - mc^2 = E - mc^2 = \wrap{\gamma - 1}mc^2}
 Note that for $v << c$ the classical, Newtonian expressions are recovered for both momentum and kinetic energy. Using the expansion for $1/\sqrt{1-x^2}\approx 1 + x^2/2$, the Lorentz coefficient $\gamma$ can be expanded to $\gamma \approx 1 + v^2/2c^2$, therefore $E\approx mc^2 + mv^2/2$ and $p\approx mv$.
 
+\section{Relativistic Effects}
+% Length Contraction & Time dilation
+Some common effects of special relativity are the shortening and lengthening of conventional Newtonian measurements due to changes in reference frame. Consider two frames $K$ and $K'$, where $K'$ is related to $K$ by a boost along the $x$ axis. The Lorentz transformation relating $K'$ to $K$ is given:
+\eqn{\Lambda^{\mu'}{}_{\nu}=\begin{pmatrix}
+	\cosh\phi & -\sinh\phi & 0 & 0 \\
+	-\sinh\phi & \cosh\phi & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 \\
+\end{pmatrix}=\begin{pmatrix}
+	\gamma & -\gamma\beta & 0 & 0 \\
+	-\gamma\beta & \gamma & 0 & 0 \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 \\
+\end{pmatrix}\quad\quad
+\beta = \frac{v}{c} = \tanh\phi}
+Using this transformation on a set of two points $A^\mu$ and $B^\mu$, we observe two primary phenomena in terms of the spatial separation $\Delta x = B^1 - A^1 = B_x - A_x$ and the temporal separation between $A$ and $B$, $\Delta t = B^0 - A^0 = B_t - A_t$. Applying the transformation matrix we observe the following:
+\eqn{\begin{split}
+	\Delta x &= \gamma \Delta x'\quad\quad \text{Length Contraction} \\
+	\Delta t' &= \gamma \Delta t\quad\quad \text{Time Dilation}
+\end{split}}
+% Paradoxes? (Bard-pole + Twin Paradox)
+% Doppler & Addition of velocities
+Let us now say that an object has a velocity $u'$ in frame $K'$, it is natural to ask what the velocity $u$ is measured in frame $K$. For that, we need to use the relativistic addition of velocities formula:
+\eqn{u = \frac{v+u'}{1 + \wrap{vu'/c^2}}}
+Lastly, note that for an electromagnetic wave propagating at speed $c$ in frame $K$, the Lorentz transformation implies a change in frequency in frame $K'$ according to the below. Note that the sign of the numerator is the same as $\ddt\Delta x$, (positive/negative for diverging/converging observers).
+\eqn{\frac{\lambda_r}{\lambda_s}=\frac{f_s}{f_r}=\sqrt{\frac{1+\beta}{1-\beta}}}
+
+%\section{Relativistic Kinematics} % OMITTED - can include if relevant for qual exams
+% Lagrangian
+% Collisions
+
