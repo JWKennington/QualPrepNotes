@@ -118,12 +118,42 @@ This can be used to simplify many integrals appearing in electrodynamics and oth
 
 
 % Vector Fields
+\newpage
 \section{Vector Fields}
+\subsection{Potentials (Closed and Exact Forms)}
+Given a differential form $a\in \Omega^p$, it is said to be \textit{closed} if it's exterior derivative is zero, $da=0$, and is said to be \textit{exact} if it is the exterior derivative of another form $b \in \Omega^{p-1}$, $a = db$. In the latter case, $b$ would be called the \textit{potential function} of $a$. Since $d^2=0$, all exact forms are closed. Whether or not closed forms are exact depends on the topology, which is out of scope here. 
+
+In the case of a vector field $\vec{F}$ on $\RThree$, the property of having no curl $\vec{\del} \times \vec{F} = 0$ is equivalent to saying $\vec{F}$ is closed. Consequently, there must exist a scalar potential $V$ such that $\vec{F} = -\del V$. To state it more formally:
+\eqn{\vec{\del}\times\vec{F} = 0 \implies \vec{F} = -\del V}
+
+\subsection{The Helmholtz Theorem}
+The Helmholtz Theorem states that a vector field $\vec{F}$ is uniquely specified by its divergence $\vec{\del}\cdot \vec{F}$ and its curl $\vec{\del}\times \vec{F}$, assuming the boundary condition $\lim_{r\to \infty} \vec{F}(\vec{r})=0$ is strong enough. If this is the case, then $F$ can be constructed from the divergence and curl:
+\eqn{\vec{F} = -\del U + \vec{\del}\times \vec{W} \quad\quad \text{where} \quad\quad
+\begin{aligned}
+	U(\vec{r}) &= \frac{1}{4\pi}\int \frac{\vec{\del}\cdot \vec{F}}{\norm{\vec{r} - \vec{r}'}} dr'^3 \\
+	\ & \ \\
+	\vec{W}(\vec{r}) &= \frac{1}{4\pi} \int\frac{\vec{\del}\times \vec{F}}{\norm{\vec{r} - \vec{r}'}}dr'^3 \\
+\end{aligned}}
 
 
 % Substitutions
 \section{Substitutions}
+%Various integrals can be simplified via substitution techniques. This section details two such substitution methods, both of which have been useful in undergraduate physics.
 \subsection{Trigonometric Substitution}
-\subsection{Weierstrass Substitution}
+Substituting trigonometric functions for more complicated expressions can simplify an integral. The below cases highlight the most common trig substitutions:
+\eqn{\begin{array}{ccc}
+	\textbf{Case} & \textbf{Integrand Contains} & \textbf{Substitution} \\
+	\text{I}   & a^2 - x^2 & x = a\sin\theta \\
+	\text{II}  & a^2 + x^2 & x = a\tan\theta \\
+	\text{III} & x^2 - a^2 & x = a\sec\theta \\
+\end{array}}
 
+\subsection{Weierstrass Substitution}
+The Weierstrass substitution transforms a function that depends on basic trigonometric functions of an angle into a function that depends on algebraic variables. Specifically, the substitution is:
+\eqn{t = \tan\wrap{\frac{\theta}{2}} \implies \left\{
+\begin{aligned}
+	\sin(\theta) &= \frac{2t}{1 + t^2} \\
+	\cos(\theta) &= \frac{1 - t^2}{1 + t^2} \\
+\end{aligned}\right.}
+\eqn{f\wrap{\sin \theta, \cos \theta} \to f\wrap{\frac{2t}{1 + t^2}, \frac{1 - t^2}{1 + t^2}}}
 
