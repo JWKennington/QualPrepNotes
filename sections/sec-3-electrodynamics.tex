@@ -4,10 +4,83 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Electricity \& Magnetism}
 \label{sec:electro}
-The electricity and magnetism subject matter in the qualifying exam is primarily at the level of \cite{griffithsIntroductionElectrodynamics2018}, a common, upper-level undergraduate relativity text.
+The electricity and magnetism subject matter in the qualifying exam is primarily at the level of \cite{griffithsIntroductionElectrodynamics2018}, a common, upper-level undergraduate electricity and magnetism text.
+
 
 \section{Electrostatics}
+We begin with the study of static electric fields. The electric field is one of two principle elements in electrodynamics, 
+% Electric Field
+\subsection{Electric Field}
+% 	Superposition
+The \textit{Principle of Superposition} in electrostatics states that the forces between two charges do not depend on any other charges. Consequently, multiple such forces and fields may be \textit{superimposed}, or added together, to construct the net force and field.
+% 	Coulomb Law
+Now that we know we can add forces between pairs of charges together, we must describe the force between two electric charges, \textit{Coulomb's law}:
+\eqn{\vec{F} = k\frac{qQ}{r^2}\vec{\hat{r}} 
+\quad\quad \text{where} \quad\quad k = \frac{1}{4\pi \epsilon_0} 
+\quad\quad \text{and} \quad\quad \vec{r}=\vec{r}_Q - \vec{r}_q} 
+In the above, $\epsilon$ is the \textit{permittivity of free space}. Note that for like sign charges, $\vec{F}$ is repulsive, and for dislike sign charges, $\vec{F}$ is attractive.
+% 	Electric Field
+The above equations also make use of the \textit{test charge} $Q$, but it is also possible to discuss the vector field $\vec{E}$ created by the source charges $q$ by the following:
+\eqn{\vec{F} = Q\vec{E} 
+\quad\quad \text{where} \quad\quad 
+\vec{E}(\vec{r}) = k \sum_i \frac{q_i}{r_i^2}\vec{\hat{r}}_i = k \int \frac{1}{r^2}\vec{\hat{r}}\ dq,
+\quad \vec{r}_i = \vec{r} - \vec{r}_{q_i}}
+% 	Continuous Charge Distribution
+For continuous charge distributions, the above can be rewritten in terms of various charge \textit{densities}. In the linear case, a line charge density $\lambda(\vec{r})$ is used. Similarly, for surface charges, $\sigma(\vec{r})$ is used, and for volume charges $\rho(\vec{r})$ is used.
+\eqn{\begin{aligned}
+	\vec{E}(\vec{r}) &= k \int \frac{\lambda\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dl' \\
+	\vec{E}(\vec{r}) &= k \int \frac{\sigma\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dS' \\
+	\vec{E}(\vec{r}) &= k \int \frac{\rho\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dV' \\
+\end{aligned}}
+% Divergence and Curl of Electrostatic Fields
+\subsection{Div and Curl of E Fields}
+The equations given in the previous section are sufficient to compute an electrostatic field given an arbitrary charge distribution; however, these integrals can be formidable. We now introduce techniques to simplify the computation of such fields, primarily via applications of Gauss' law:
+\eqn{\oint \vec{E} \cdot d\vec{S} = \frac{Q_{\text{enc}}}{\epsilon_0} 
+\quad \iff \quad \vec{\del}\cdot\vec{E} = \frac{\rho}{\epsilon_0}
+}
+% 	Gauss' Law / Field Lines / Flux
+% 	Divergence of E / Apply Gauss' Law
+% 	Curl of E
+% Electric Potential
+\subsection{Electric Potential}
+% 	Definitions of Potential
+% 	Poisson's Equation / Laplace Equation
+% 	Boundary Conditions
+% Work and Energy in electrostatics
+\subsection{Work and Energy in Electrostatics}
+% 	Charge configuration energy
+% 	Electrostatic Energy
+% Conductors
+\subsection{Conductors}
+% 	Basic Properties
+% 	Induced Charges
+% 	Surface Charges
+% 	Capacitors
+
+
 \section{Potentials}
+% Laplace Equation
+% 	Introduction
+%	Laplace Equation in One Dimension
+%	Laplace Equation in Two Dimensions
+%	Laplace Equation in Three Dimensions
+% 	Boundary Conditions / First Uniqueness
+% 	Conductors / Second Uniqueness 
+% Method of Images
+% 	Classic Problem
+% 	Induced Surface Charge
+% 	Force and Energy
+% 	Other Image Problems
+% Separation of Variables
+% 	Cartesian Coordinates
+% 	Spherical Coordinates
+% Multipole Expansion
+% 	Approximate Potentials
+% 	Monopole and Dipole Terms
+% 	Origin of Coordinates in Expansion
+% 	E Field of Dipole
+
+
 \section{Electric Fields in Matter}
 \section{Magnetostatics}
 \section{Magnetic Fields in Matter}
@@ -16,4 +89,5 @@ The electricity and magnetism subject matter in the qualifying exam is primarily
 \section{Electromagnetic Waves}
 \section{Potentials and Fields}
 \section{Radiation}
+\section{Circuits}
 
