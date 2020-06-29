@@ -90,11 +90,31 @@ We adopt the mathematical convention for spherical coordinates $(r, \theta, \phi
 	\vec{\hat{\phi}} &= - \sin\theta\ \vec{\hat{x}} + \cos\theta\ \vec{\hat{y}}
 \end{align}
 The Gradient and Laplacian can also be written in spherical coordinates, which are often useful:
-\eqn{\del^2 = }
-\eqn{\del^2 = }
+\eqn{\del = \pd{}{r}\vec{\hat{r}} + \frac{1}{r \sin \phi}\pd{}{\theta} \vec{\hat{\theta}} + \frac{1}{r}\pd{}{\phi}\vec{\hat{\phi}}}
+\eqn{\del^2 = \frac{1}{r^2}\pd{}{r}\wrap{r^2 \pd{}{r}} + \frac{1}{r^2 \sin^2\phi}\pd{{}^2}{\theta^2} + \frac{1}{r \sin \phi}\pd{}{\phi}\wrap{\sin\phi \pd{}{\phi}}}
 
 % Dirac Delta
 \section{Dirac Delta}
+The \textit{Dirac delta} is the first example of a \textit{functional}, or \textit{distribution}, encountered in a traditional physics undergraduate sequence, and is central to the entire theory of electrodynamics. A common example is given by the divergence of $\vec{v} = \frac{1}{r^2} \vec{\hat{r}}$. A naive computation yields $\del \cdot \vec{v} = 0$, which seems counterintuitive. However, $\vec{v}$ attains an infinite value at $0$, and any integral over a spherical region centered at $0$, we obtain a constant $4\pi$. As we will see, this is a Dirac delta function.
+% One-Dimensional Dirac Delta
+\subsection{One-Dimensional Dirac Delta}
+The one-dimensional Dirac delta function is a function that is infinite at one point, and zero elsewhere, that is integrable to a constant value:
+\eqn{\delta(x) = 
+	\begin{cases}
+		0, & x \neq 0 \\
+		\infty, & x = 0
+	\end{cases} 
+\quad\quad \text{such that}\quad\quad \int_{-\infty}^{\infty}\delta(x)\ dx = 1}
+By far the most important fact about the delta function, is that, when paired with a general function $f(x)$, the delta function "selects" the value of $f$ at $x=0$, such that $f(x)\delta(x) = f(0)\delta(x)$. This is useful for simplifying integrals. 
+\eqn{\int_{-\infty}^{\infty}f(x)\delta(x)dx = f(0)\int_{-\infty}^{\infty}\delta(x)dx = f(0) \quad \implies \quad \int_{-\infty}^{\infty}f(x)\delta(x - a)dx = f(a)}
+% Three-Dimensional Dirac Delta
+\subsection{Three-Dimensional Dirac Delta}
+We can generalize the delta function to three-dimensional space: $\delta^3(\vec{r})=\delta(x)\delta(y)\delta(z)$. Integrating this function over all space exhibits the same "selection" behavior as in the one-dimensional case:
+\eqn{\int_{\infty^3}f(\vec{r})\delta^3(\vec{r} - \vec{a})dx^3 = f(\vec{a})}
+We can now restate the divergence of the function $f(\vec{r})=\frac{1}{r^2}\vec{\hat{r}}$ in terms of the delta function. 
+\eqn{\boxed{\vec{\del} \cdot \wrap{\frac{\vec{\hat{r}}}{r^2}} = 4\pi \delta^3(\vec{r})}}
+This can be used to simplify many integrals appearing in electrodynamics and other three-dimensional cases, such as spherical harmonics. For example:
+\eqn{\int_{\mathcal{V}}\wrap{r^2 + 2} \vec{\del}\cdot\wrap{\frac{\vec{\hat{r}}}{r^2}} dV = \int_{\mathcal{V}}\wrap{r^2 + 2} 4\pi \delta^3(\vec{r}) dV = 4\pi \wrap{0 + 2} = 8\pi}
 
 
 % Vector Fields
