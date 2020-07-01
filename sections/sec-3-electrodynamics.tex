@@ -30,7 +30,7 @@ For continuous charge distributions, the above can be rewritten in terms of vari
 \eqn{\begin{aligned}
 	\vec{E}(\vec{r}) &= k \int \frac{\lambda\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dl' \\
 	\vec{E}(\vec{r}) &= k \int \frac{\sigma\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dS' \\
-	\vec{E}(\vec{r}) &= k \int \frac{\rho\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ dV' \\
+	\vec{E}(\vec{r}) &= k \int \frac{\rho\wrap{\vec{r}'}}{r^2}\vec{\hat{r}}\ d\tau' \\
 \end{aligned}}
 % Divergence and Curl of Electrostatic Fields
 \subsection{Div and Curl of E Fields}
@@ -46,13 +46,28 @@ Gauss' law can be applied in cases in which $\rho$ exhibits symmetry, such that 
 Similar methods can be used for an infinite sheet of charge, to produce $E=\frac{\sigma}{2\epsilon_0}$. We've exploited the divergence of the $\vec{E}$ field thus far; now we turn the the curl of an $\vec{E}$ field. Starting with a simple example of a point charge, one obtains $\int_a^b \vec{E} \cdot d\vec{l} = kq \wrap{1/r_a - 1/r_b}$, which only depends upon the end points of the integration. Consequently, $\vec{E}$ is a conservative field, and we have:
 \eqn{\oint \vec{E} \cdot d\vec{l} = 0 \iff \vec{\del}\times \vec{E} = 0}
 % Electric Potential
-\subsection{Electric Potential}
+\subsection{Electric Potential}	
+Since the curl of $\vec{E}$ is zero, is it a closed form, and is therefore also an exact form. We know that exact forms are the exterior derivatives of simpler forms, and therefore that $\vec{E} = -\del V$, where $V$ is called the \textit{scalar potential}. For more on closed and exact forms, see Appendix \ref{app:vector-analysis:potentials}. 
 % 	Definitions of Potential
+We can then define the potential directly:
+\eqn{V(\vec{r}) \equiv - \int_{\mathcal{O}}^{\vec{r}} \vec{E} \cdot d\vec{l} 
+\quad\quad\quad V(\vec{r}) = - \int_{\infty}^{\vec{r}} k \frac{\rho(\vec{r}')}{r'}d\tau'}
 % 	Poisson's Equation / Laplace Equation
+The choice of reference point $\mathcal{O}$ amounts to a the addition of a constant to $V$. The conventional choice is \textit{infinitely far away}, or $\mathcal{O}=\infty$. Combining both $\vec{\del}\cdot \vec{E}$ and $\vec{E}=-\del V$, we obtain the general \textit{Poisson} equation, which is the \textit{Laplace} equation.
+\eqn{\del^2 V = -\frac{\rho}{\epsilon_0}\quad \text{(Poisson)}
+\quad\quad\quad\quad\quad \rho\to 0 \implies \del^2 V = 0 \quad \text{(Laplace)}}
 % 	Boundary Conditions
+From the infinite-sheet example we can infer important details about continuity of electric fields when a boundary is involved. A charged boundary will induce a discontinuity in the perpendicular component $E^{\perp}$, whereas the parallel component $\vec{E}^{\parallel}$ is always continuous. Specifically:
+\eqn{E^{\perp}_{\text{ext}} - E^{\perp}_{\text{int}} = \frac{\sigma}{\epsilon_0} \quad\quad\quad \vec{E}^{\parallel}_{\text{ext}} = \vec{E}^{\parallel}_{\text{int}}}
+It should be noted that the potential $V$ is \textit{always} continuous, whereas the gradient of the potential is not necessarily continuous, since $-\vec{E} = \del V$.
 % Work and Energy in electrostatics
 \subsection{Work and Energy in Electrostatics}
+We have discussed field configurations and how those fields give rise to forces on test charges. Now, we discuss the work and energy induced by the electric force, using the conventional, Newtonian definition of work:
+\eqn{W = \int_a^b \vec{F} \cdot d\vec{l} = -Q \int_a^b \vec{E} \cdot d\vec{l} = Q\wraph{V\wrap{\vec{b}} - V\wrap{\vec{a}}}}
 % 	Charge configuration energy
+Note that the energy of a charge configuration may be computed by evaluating the work required to move each point charge from infinity to its final location: $W_i = q_i V(\vec{r}_i)$, since we choose $\vec{V}_{\infty}=0$.
+When configuring multiple charges, the potential will change after each charge has been put in place, and will affect subsequent charges. For example, in a system of three charges, the first requires no work $W_1=0$, the second is only affected by the first $W_2 = k q_2 q_1 / r_{12}$, but the third is affected by both the first two charges $W_3 = k q_3 \wrap{q_1 / r_{13} + q_2 / r_{23}}$. For a general system of $n$ charges:
+\eqn{W = k \sum_{i=1}^n \sum_{j>i}^n \frac{q_i q_j}{r_{ij}} \quad\quad \text{where} \quad r_{ij} = \norm{\vec{r}_j - \vec{r}_i}}
 % 	Electrostatic Energy
 % Conductors
 \subsection{Conductors}
