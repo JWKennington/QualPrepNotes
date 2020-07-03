@@ -66,16 +66,35 @@ We have discussed field configurations and how those fields give rise to forces 
 \eqn{W = \int_a^b \vec{F} \cdot d\vec{l} = -Q \int_a^b \vec{E} \cdot d\vec{l} = Q\wraph{V\wrap{\vec{b}} - V\wrap{\vec{a}}}}
 % 	Charge configuration energy
 Note that the energy of a charge configuration may be computed by evaluating the work required to move each point charge from infinity to its final location: $W_i = q_i V(\vec{r}_i)$, since we choose $\vec{V}_{\infty}=0$.
-When configuring multiple charges, the potential will change after each charge has been put in place, and will affect subsequent charges. For example, in a system of three charges, the first requires no work $W_1=0$, the second is only affected by the first $W_2 = k q_2 q_1 / r_{12}$, but the third is affected by both the first two charges $W_3 = k q_3 \wrap{q_1 / r_{13} + q_2 / r_{23}}$. For a general system of $n$ charges:
-\eqn{W = k \sum_{i=1}^n \sum_{j>i}^n \frac{q_i q_j}{r_{ij}} \quad\quad \text{where} \quad r_{ij} = \norm{\vec{r}_j - \vec{r}_i}}
+When configuring multiple charges, the potential will change after each charge has been put in place, and will affect subsequent charges. For example, in a system of three charges, the first requires no work $W_1=0$, the second is only affected by the first $W_2 = k q_2 q_1 / r_{12}$, but the third is affected by both the first two charges $W_3 = k q_3 \wrap{q_1 / r_{13} + q_2 / r_{23}}$. 
 % 	Electrostatic Energy
+For a general system of $n$ charges $q$:
+\eqn{W = k \sum_{i=1}^n \sum_{j>i}^n \frac{q_i q_j}{r_{ij}} = \half \sum_{i=1}^n q_i V\wrap{\vec{r}_i} \quad\quad \text{where} \quad r_{ij} = \norm{\vec{r}_j - \vec{r}_i}}
+For a continuous charge distribution $\rho$, the configuration energy $W$ can be rewritten in terms of $E$ instead of $\rho$, giving the nicer form. Note that in field theories, the energy is considered \textit{stored in the field}.
+\eqn{W = \half \int \rho V d\tau = \frac{\epsilon_0}{2} \int E^2 d\tau}
 % Conductors
 \subsection{Conductors}
 % 	Basic Properties
+In a \textit{conductor}, electrons are more loosely bound than in insulators, and are consequently free to move around. The mobility of internal electrons produces several distinct properties:
+\begin{enumerate}[label=(\roman*)]
+	\item $\vec{E}=0$ \textbf{inside a conductor}: Charges move to counterbalance external fields.
+	\item $\rho = 0$ \textbf{inside a conductor}: follows (i) from Gauss' Law.
+	\item \textbf{All net charge resides on the surface}: Since no charge is in the interior.
+	\item \textbf{A conductor is an equipotential}: a
+	\item $\vec{E}$ \textbf{$\perp$ surface, just outside a conductor}: any tangential component is cancelled via (i).
+\end{enumerate} 
 % 	Induced Charges
+When a charge $q$ is placed near or within a conductor, this \textit{induces} a charge $q_{\text{induced}}=-q$ on the surface of the conductor nearest $q$, by either attracting or repelling the mobile electrons within. Note that $\vec{E}$ is still 0 within the conductor.
 % 	Surface Charges
+Therefore, the field immediately outside must be:
+\eqn{\vec{E} = \frac{\sigma}{\epsilon_0}\vec{\hat{n}} \quad\quad\quad\quad
+\sigma = - \epsilon_0 \pd{V}{n} \quad\quad \implies \quad\quad
+\vec{F} = \sigma \vec{E}_{\text{avg}} = \frac{\sigma^2}{2 \epsilon_0}\vec{\hat{n}}}
 % 	Capacitors
-
+Combining two conductors can produce a \textit{capacitor}, which is capable of storing a certain amount of charge $Q$ at a particular potential $V$, related by the \textit{capacitance} $C$ linearly. Note that $C$ is a purely geometrical quantity, and is measured in \textit{farads (F)}. Some examples below in Eq. \ref{eq:em:caps}
+\eqn{C\equiv \frac{Q}{V} \quad\quad\quad W = \half CV^2}
+\eqn[eq:em:caps]{C_{\text{Par-Plate}} = \frac{A\epsilon_0}{d} \quad\quad\quad 
+C_{\text{Cylinder}} = \frac{2 \pi \epsilon_0}{\ln\wrap{R_{\text{outer}} / R_{\text{inner}}}}}
 
 \section{Potentials}
 % Laplace Equation
